@@ -236,3 +236,18 @@ h2 {
 .rotate-slow {
   animation: spin-slow 27s linear infinite;
 }
+#BREATHE {
+  animation: breathe 3s ease-in-out infinite, fadeIn 3s ease-in-out;
+}
+
+@keyframes breathe {
+  0% {
+    transform: translateY(0); /* Starts at the normal position */
+  }
+  50% {
+    transform: translateY(-6px); /* Moves up a bit kidogo tu */
+  }
+  100% {
+    transform: translateY(0); /* Returnss to the original position */
+  }
+}
