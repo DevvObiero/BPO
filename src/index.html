@@ -154,7 +154,9 @@
     </section>
     <section class="py-16 px-4 md:px-20" id="statsSection">
       <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2
+          class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+        >
           We are global leaders in next-generation digital solutions and
           consulting services
         </h2>
@@ -347,6 +349,22 @@
       );
 
       observer.observe(document.querySelector("#statsSection"));
+
+      const revealElements = document.querySelectorAll(".reveal-text");
+
+      const observerr = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("opacity-0", "translate-y-8");
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      revealElements.forEach((el) => observerr.observe(el));
     </script>
   </body>
 </html>
