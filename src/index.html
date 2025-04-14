@@ -244,7 +244,7 @@
       </div>
     </section>
 
-    <!-- <section>
+    <section class="w-100">
       <div class="gradient-bg">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -273,7 +273,7 @@
           <div class="interactive"></div>
         </div>
       </div>
-    </section> -->
+    </section>
     <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
     <!-- <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -370,6 +370,32 @@
       );
 
       revealElements.forEach((el) => observerr.observe(el));
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const interBubble = document.querySelector(".interactive");
+        let curX = 0;
+        let curY = 0;
+        let tgX = 0;
+        let tgY = 0;
+
+        function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(
+            curX
+          )}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+            move();
+          });
+        }
+
+        window.addEventListener("mousemove", (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+        });
+
+        move();
+      });
     </script>
   </body>
 </html>
