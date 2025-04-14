@@ -136,6 +136,11 @@
         >
           Join Now
         </button>
+        <p class="text-lg md:text-xl text-black mb-6 mt-8">
+          Trusted by
+          <span id="count" class="text-red-500 font-bold">0</span> companies
+          across the globe
+        </p>
       </div>
       <div
         id="rotating-image"
@@ -215,6 +220,30 @@
         const rotation = scrollY * 0.2; // tweak 0.2 to adjust rotation speed
         image.style.transform = `rotate(${rotation}deg)`;
       });
+
+      const counter = document.getElementById("count");
+
+      let started = false; // Make sure it runs only once
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+          started = true;
+
+          let count = 0;
+          const target = 150;
+          const speed = 10; // Lower = faster
+
+          const interval = setInterval(() => {
+            count++;
+            counter.textContent = count + "+";
+
+            if (count >= target) {
+              clearInterval(interval);
+            }
+          }, speed);
+        }
+      });
+
+      observer.observe(counter);
     </script>
   </body>
 </html>
