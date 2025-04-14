@@ -152,6 +152,90 @@
         ABOUT US
       </h2>
     </section>
+    <section class="py-16 px-4 md:px-20" id="statsSection">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          We are global leaders in next-generation digital solutions and
+          consulting services
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Currently operating in <strong>15 countries</strong> and creating
+          <strong>1200 high tech jobs</strong> globally.
+        </p>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-left"
+        >
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter"
+              data-target="1200"
+            >
+              0
+            </p>
+            <p class="text-gray-700">Employees Worldwide</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="15">
+              0
+            </p>
+            <p class="text-gray-700">No of Countries</p>
+          </div>
+
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter"
+              data-target="18000000"
+            >
+              0
+            </p>
+            <p class="text-gray-700">Subscribers On Our Platform</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="35">
+              0
+            </p>
+            <p class="text-gray-700">Countries with Customer Footprint</p>
+          </div>
+
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter"
+              data-target="75000"
+            >
+              0
+            </p>
+            <p class="text-gray-700">Trained Personnel in Our Institutions</p>
+          </div>
+
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter"
+              data-target="470"
+            >
+              0
+            </p>
+            <p class="text-gray-700">Implemented Projects</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="1">
+              0
+            </p>
+            <p class="text-gray-700">Microsoft Testing Center in Africa</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="5">
+              0
+            </p>
+            <p class="text-gray-700">Appraised at CMMI Maturity Level 5</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- <section>
       <div class="gradient-bg">
@@ -220,39 +304,49 @@
         image.style.transform = `rotate(${rotation}deg)`;
       });
 
-      const counter = document.getElementById("count");
+      const counters = document.querySelectorAll(".counter");
+      const singleCounter = document.getElementById("count");
+      let animated = false;
 
-      let started = false; // Make sure it runs only once
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !started) {
-          started = true;
+      function animateValue(element, target, duration = 2000) {
+        let start = 0;
+        const step = target / (duration / 20);
 
-          let count = 0;
-          const target = 150;
-          const speed = 10; // Lower = faster
+        const update = () => {
+          start += step;
+          if (start < target) {
+            element.innerText = Math.floor(start).toLocaleString();
+            setTimeout(update, 20);
+          } else {
+            element.innerText = target.toLocaleString();
+          }
+        };
+        update();
+      }
 
-          const interval = setInterval(() => {
-            count++;
-            counter.textContent = count + "+";
+      const animateAllCounters = () => {
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-target");
+          animateValue(counter, target);
+        });
 
-            if (count >= target) {
-              clearInterval(interval);
-            }
-          }, speed);
+        // Animate the single #count element
+        if (singleCounter) {
+          animateValue(singleCounter, 9999); // Change 9999 to your target value
         }
-      });
+      };
 
-      observer.observe(counter);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !animated) {
+            animated = true;
+            animateAllCounters();
+          }
+        },
+        { threshold: 0.4 }
+      );
 
-      window.addEventListener("load", () => {
-        const path = document.querySelector(".cls-1");
-        const length = path.getTotalLength();
-        console.log("Path length:", length); // See the actual length in your browser console
-
-        path.style.strokeDasharray = length;
-        path.style.strokeDashoffset = length;
-        path.style.animation = "draw 3s linear forwards";
-      });
+      observer.observe(document.querySelector("#statsSection"));
     </script>
   </body>
 </html>
