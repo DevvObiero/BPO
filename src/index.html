@@ -104,7 +104,7 @@
         class="absolute -left-72 top-20 h-[630px] w-auto z-0"
       >
         <img
-          src="./istockphoto-596811948-612x612.jpg"
+          src="./istockphoto-596811948-612x612-removebg-preview.png"
           alt="Decorative"
           class="h-full w-auto rotate-slow"
         />
@@ -127,7 +127,7 @@
         </button>
         <p class="text-lg md:text-xl text-black mb-6 mt-8">
           Trusted by
-          <span id="count" class="text-red-500 font-bold">0</span> companies
+          <span id="count-up" class="text-red-500 font-bold">0</span> companies
           across the globe
         </p>
       </div>
@@ -253,22 +253,22 @@
             <img
               style="animation: floating 3s infinite ease-in-out"
               id="fg-svg"
-              src="./cc350d306da1c5083748abb4e4522c4d-removebg-preview.png"
+              src="./2895048-tablet-happy-and-business-with-portrait-of-black-woman-on-png-for-web-design-creative-and-social-media.-search-technology-and-online-with-person-isolated-on-transparent-background-for-networki.png"
               class="w-auto h-140"
             />
           </div>
           <!-- image  -->
-          <div class="flex flex-1 flex-col items-center lg:items-start">
-            <h1 class="text-3xl text-blue-950">Share Your Pins</h1>
+          <div class="flex flex-1 flex-col p-10 items-center lg:items-start">
+            <h1 class="text-4xl text-blue-950">WHY KENYA?</h1>
             <p
               class="text-gray-500 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
             >
-              And it gets better! You can also easily share your pinned sections
-              with others, saving both you and your friends or colleagues
-              valuable time. No need for endless back-and-forth to show someone
-              a specific piece of content. Just send them your pin, and they can
-              access that exact part of the page instantly—even if they don't
-              have the extension installed!
+              Kenya emerges as a top destination for call centers, according to
+              Site Selection Group, a leading provider of global location
+              advisory, economic incentives, and corporate real estate services.
+              They cited Kenya's high proficiency in English compared to some
+              key nearshore and offshore countries as the reason for this high
+              ranking.
             </p>
             <button
               type="button"
@@ -437,6 +437,24 @@
 
       //     move();
       //   });
+      window.addEventListener("DOMContentLoaded", () => {
+        const counter = document.getElementById("count-up");
+        let count = 0;
+        const target = 150;
+        const speed = 10; // smaller = faster
+
+        const updateCount = () => {
+          if (count < target) {
+            count++;
+            counter.textContent = count;
+            setTimeout(updateCount, speed);
+          } else {
+            counter.textContent = target;
+          }
+        };
+
+        updateCount();
+      });
     </script>
   </body>
 </html>

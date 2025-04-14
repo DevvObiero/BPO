@@ -251,3 +251,9 @@ h2 {
     transform: translateY(0); /* Returnss to the original position */
   }
 }
+
+html,
+body {
+  overflow-x: hidden;
+  margin-bottom: 0;
+}
