@@ -218,6 +218,12 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
+  .bottom-4 {
+    bottom: calc(var(--spacing) * 4);
+  }
   .-left-72 {
     left: calc(var(--spacing) * -72);
   }
@@ -260,6 +266,9 @@
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
@@ -293,8 +302,20 @@
   .table {
     display: table;
   }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
   .h-9 {
     height: calc(var(--spacing) * 9);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
   }
   .h-60 {
     height: calc(var(--spacing) * 60);
@@ -323,6 +344,9 @@
   .w-2\/4 {
     width: calc(2/4 * 100%);
   }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
@@ -334,6 +358,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .w-max {
+    width: max-content;
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -434,6 +461,9 @@
   .bg-transparent {
     background-color: transparent;
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
@@ -460,6 +490,9 @@
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
   }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
@@ -492,6 +525,9 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-\[10px\] {
+    font-size: 10px;
   }
   .text-\[clamp\(1rem\,5vw\,3rem\)\] {
     font-size: clamp(1rem, 5vw, 3rem);
@@ -910,9 +946,26 @@ h1, h2 {
     transform: translateY(0);
   }
 }
-html, body {
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
   overflow-x: hidden;
-  margin-bottom: 0;
+  overflow-y: auto;
+  margin: 0;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll {
+  animation: scroll 20s linear infinite;
 }
 @property --tw-translate-x {
   syntax: "*";
