@@ -243,8 +243,49 @@
         </div>
       </div>
     </section>
+    <section class="relative">
+      <div class="relative mt-20 lg:mt-52">
+        <div
+          class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-24"
+        >
+          <!-- image  -->
+          <div class="flex flex-1 justify-center z-10 mb-10 lg:mb-0">
+            <img
+              style="animation: floating 3s infinite ease-in-out"
+              id="fg-svg"
+              src="./cc350d306da1c5083748abb4e4522c4d-removebg-preview.png"
+              class="w-auto h-140"
+            />
+          </div>
+          <!-- image  -->
+          <div class="flex flex-1 flex-col items-center lg:items-start">
+            <h1 class="text-3xl text-blue-950">Share Your Pins</h1>
+            <p
+              class="text-gray-500 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+            >
+              And it gets better! You can also easily share your pinned sections
+              with others, saving both you and your friends or colleagues
+              valuable time. No need for endless back-and-forth to show someone
+              a specific piece of content. Just send them your pin, and they can
+              access that exact part of the page instantly—even if they don't
+              have the extension installed!
+            </p>
+            <button
+              type="button"
+              class="btn btn-purple hover:bg-white hover:text-black"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+        <div
+          id="bg-svg"
+          class="hidden lg:block overflow-hidden bg-red-800 hover:bg-green-600 rounded-l-full absolute h-80 w-2/4 lg:-bottom-24 lg:-right-36"
+        ></div>
+      </div>
+    </section>
 
-    <section class="w-100">
+    <!-- <section class="w-100">
       <div class="gradient-bg">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -273,7 +314,7 @@
           <div class="interactive"></div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
     <!-- <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -371,31 +412,31 @@
 
       revealElements.forEach((el) => observerr.observe(el));
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const interBubble = document.querySelector(".interactive");
-        let curX = 0;
-        let curY = 0;
-        let tgX = 0;
-        let tgY = 0;
+      //   document.addEventListener("DOMContentLoaded", () => {
+      //     const interBubble = document.querySelector(".interactive");
+      //     let curX = 0;
+      //     let curY = 0;
+      //     let tgX = 0;
+      //     let tgY = 0;
 
-        function move() {
-          curX += (tgX - curX) / 20;
-          curY += (tgY - curY) / 20;
-          interBubble.style.transform = `translate(${Math.round(
-            curX
-          )}px, ${Math.round(curY)}px)`;
-          requestAnimationFrame(() => {
-            move();
-          });
-        }
+      //     function move() {
+      //       curX += (tgX - curX) / 20;
+      //       curY += (tgY - curY) / 20;
+      //       interBubble.style.transform = `translate(${Math.round(
+      //         curX
+      //       )}px, ${Math.round(curY)}px)`;
+      //       requestAnimationFrame(() => {
+      //         move();
+      //       });
+      //     }
 
-        window.addEventListener("mousemove", (event) => {
-          tgX = event.clientX;
-          tgY = event.clientY;
-        });
+      //     window.addEventListener("mousemove", (event) => {
+      //       tgX = event.clientX;
+      //       tgY = event.clientY;
+      //     });
 
-        move();
-      });
+      //     move();
+      //   });
     </script>
   </body>
 </html>
