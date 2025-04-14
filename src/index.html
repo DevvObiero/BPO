@@ -6,6 +6,176 @@
     <link href="./output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
+      <nav
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img
+            src="./nftbpo-high-resolution-logo-transparent.png"
+            alt="Logo"
+            class="w-auto h-9"
+          />
+          <!-- <span class="text-xl font-bold text-black">BPO</span> -->
+        </div>
+
+        <!-- Burger Menu for Small Screens -->
+        <div class="lg:hidden flex items-center">
+          <button id="burger-menu-btn" class="text-black">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menu -->
+        <ul
+          id="menu"
+          class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
+        >
+          <li>
+            <a href="#HOME" class="hover:text-red-500 transition duration-300"
+              >HOME</a
+            >
+          </li>
+          <li>
+            <a href="#WE" class="hover:text-red-500 transition duration-300"
+              >WHO WE ARE</a
+            >
+          </li>
+          <li>
+            <a href="#MEET" class="hover:text-red-500 transition duration-300"
+              >MEET THE TEAM</a
+            >
+          </li>
+          <li>
+            <a
+              href="#FEATURED"
+              class="hover:text-red-500 transition duration-300"
+              >CLASSES</a
+            >
+          </li>
+          <li>
+            <a href="#MEMBER" class="hover:text-red-500 transition duration-300"
+              >MEMBERSHIPS</a
+            >
+          </li>
+
+          <!-- Login Button -->
+          <li>
+            <button
+              class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md hover:bg-red-600 transition duration-300"
+            >
+              LOGIN
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- SVG Image Positioned on the Left -->
+        <div id="rotating-image" class="absolute -left-72 top-20 h-[630px] w-auto z-0">
+            <img src="./istockphoto-596811948-612x612.jpg" 
+                 alt="Decorative" 
+                 class="h-full w-auto rotate-slow" />
+          </div>
+          
+        <!-- Text content -->
+        <div class="absolute right-0 p-6 md:p-12 z-10">
+          <h1 class="text-3xl md:text-6xl text-black font-bold mb-4 w-139">
+           EMPOWERING GLOBAL BUSINESSES
+          </h1>
+          <p class="text-lg md:text-xl text-black mb-6">
+           With Kenyan Talent & AI
+          </p>
+          <button
+            class="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-full font-semibold transition"
+          >
+            Join Now
+          </button>
+        </div>
+      </section>
+      
+    </section>
+    <!-- <section>
+      <div class="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+          <div class="interactive"></div>
+        </div>
+      </div>
+    </section> -->
+    <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const interBubble = document.querySelector(".interactive");
+        let curX = 0;
+        let curY = 0;
+        let tgX = 0;
+        let tgY = 0;
+
+        function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(
+            curX
+          )}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+            move();
+          });
+        }
+
+        window.addEventListener("mousemove", (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+        });
+
+        move();
+      });
+    </script> -->
+    <script>
+        const image = document.getElementById('rotating-image');
+      
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY;
+          const rotation = scrollY * 0.2; // tweak 0.2 to adjust rotation speed
+          image.style.transform = `rotate(${rotation}deg)`;
+        });
+      </script>
+      
   </body>
 </html>
