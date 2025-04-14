@@ -46,39 +46,53 @@
           class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
         >
           <li>
-            <a href="#HOME" class="hover:text-red-500 transition duration-300"
-              >HOME</a
+            <a
+              href="#HOME"
+              class="transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
             >
+              HOME
+            </a>
           </li>
+
           <li>
-            <a href="#WE" class="hover:text-red-500 transition duration-300"
+            <a
+              href="#WE"
+              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
               >ABOUT</a
             >
           </li>
           <li>
-            <a href="#MEET" class="hover:text-red-500 transition duration-300"
+            <a
+              href="#MEET"
+              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
               >SERVICES</a
             >
           </li>
           <li>
             <a
               href="#FEATURED"
-              class="hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
               >AI INTERGRATIONS</a
             >
           </li>
           <li>
-            <a href="#MEMBER" class="hover:text-red-500 transition duration-300"
+            <a
+              href="#MEMBER"
+              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
               >BLOG</a
             >
           </li>
           <li>
-            <a href="#MEMBER" class="hover:text-red-500 transition duration-300"
+            <a
+              href="#MEMBER"
+              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
               >CAREERS</a
             >
           </li>
           <li>
-            <a href="#MEMBER" class="hover:text-red-500 transition duration-300"
+            <a
+              href="#MEMBER"
+              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
               >CONTACT US</a
             >
           </li>
@@ -86,7 +100,7 @@
           <!-- Login Button -->
           <li>
             <button
-              class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md hover:bg-red-600 transition duration-300"
+              class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md hover:bg-green-600 transition duration-300"
             >
               LOGIN
             </button>
@@ -94,31 +108,47 @@
         </ul>
       </nav>
     </header>
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- SVG Image Positioned on the Left -->
-        <div id="rotating-image" class="absolute -left-72 top-20 h-[630px] w-auto z-0">
-            <img src="./istockphoto-596811948-612x612.jpg" 
-                 alt="Decorative" 
-                 class="h-full w-auto rotate-slow" />
-          </div>
-          
-        <!-- Text content -->
-        <div class="absolute right-0 p-6 md:p-12 z-10">
-          <h1 class="text-3xl md:text-6xl text-black font-bold mb-4 w-139">
-           EMPOWERING GLOBAL BUSINESSES
-          </h1>
-          <p class="text-lg md:text-xl text-black mb-6">
-           With Kenyan Talent & AI
-          </p>
-          <button
-            class="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-full font-semibold transition"
-          >
-            Join Now
-          </button>
-        </div>
-      </section>
-      
+    <section
+      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <!-- SVG Image Positioned on the Left -->
+      <div
+        id="rotating-image"
+        class="absolute -left-72 top-20 h-[630px] w-auto z-0"
+      >
+        <img
+          src="./istockphoto-596811948-612x612.jpg"
+          alt="Decorative"
+          class="h-full w-auto rotate-slow"
+        />
+      </div>
+
+      <!-- Text content -->
+      <div class="absolute right-0 p-6 md:p-12 z-10">
+        <h1 class="text-3xl md:text-6xl text-black font-bold mb-4 w-139">
+          EMPOWERING GLOBAL BUSINESSES
+        </h1>
+        <p class="text-lg md:text-xl text-black mb-6">
+          With Kenyan Talent & AI
+        </p>
+        <button
+          class="bg-red-500 hover:bg-green-600 px-6 py-3 rounded-full font-semibold transition"
+        >
+          Join Now
+        </button>
+      </div>
+      <div
+        id="rotating-image"
+        class="absolute -right-52 top-96 h-[330px] w-auto z-0"
+      >
+        <img
+          src="./istockphoto-596811948-612x612.jpg"
+          alt="Decorative"
+          class="h-full w-auto rotate-slow"
+        />
+      </div>
     </section>
+
     <!-- <section>
       <div class="gradient-bg">
         <svg xmlns="http://www.w3.org/2000/svg">
@@ -178,14 +208,13 @@
       });
     </script> -->
     <script>
-        const image = document.getElementById('rotating-image');
-      
-        window.addEventListener('scroll', () => {
-          const scrollY = window.scrollY;
-          const rotation = scrollY * 0.2; // tweak 0.2 to adjust rotation speed
-          image.style.transform = `rotate(${rotation}deg)`;
-        });
-      </script>
-      
+      const image = document.getElementById("rotating-image");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const rotation = scrollY * 0.2; // tweak 0.2 to adjust rotation speed
+        image.style.transform = `rotate(${rotation}deg)`;
+      });
+    </script>
   </body>
 </html>
