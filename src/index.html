@@ -259,6 +259,8 @@
         </div>
       </div>
     </section>
+    <h3 class="text-lg text-gray-600 mb-12 text-center">our clients</h3>
+
     <!-- Logo Carousel -->
     <div class="w-full overflow-hidden bg-white py-6">
       <div class="animate-scroll flex gap-10 items-center w-max">
@@ -353,29 +355,18 @@
     <section class="relative">
       <div class="relative mt-20 lg:mt-52">
         <div
-          class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-24"
+          class="container flex flex-col lg:flex-row items-center justify-center gap-x-24"
         >
-          <!-- image  -->
-          <div class="flex flex-1 justify-center z-10 mb-10 lg:mb-0">
-            <img
-              style="animation: floating 3s infinite ease-in-out"
-              id="fg-svg"
-              src="./cc350d306da1c5083748abb4e4522c4d-removebg-preview.png"
-              class="w-auto h-140"
-            />
-          </div>
-          <!-- image  -->
-          <div class="flex flex-1 flex-col p-10 items-center lg:items-start">
-            <h1
-              class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 text-5xl text-blue-950"
-            >
-              WHY KENYA?
-            </h1>
+          <!-- LEFT SIDE: TEXT -->
+          <div
+            class="flex flex-1 flex-col p-10 items-center lg:items-start z-10"
+          >
+            <h1 class="text-5xl text-blue-950">WHY KENYA?</h1>
             <p
               class="text-gray-500 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
             >
               “Kenya has a young, educated, entrepreneurial, and
-              English-speaking workforce, Kenya generates over 90% of its energy
+              English-speaking workforce. Kenya generates over 90% of its energy
               from renewable sources, and, Kenya's largest export market is the
               United States.”
             </p>
@@ -386,72 +377,127 @@
               More Info
             </button>
           </div>
+
+          <!-- RIGHT SIDE: BACKGROUND + IMAGE -->
+          <div class="relative flex flex-1 justify-center z-10 mb-10 lg:mb-0">
+            <!-- Background blob -->
+            <div
+              id="bg-svg"
+              class="hidden lg:block overflow-hidden bg-red-800 hover:bg-green-600 rounded-l-full absolute h-[22rem] w-[36rem] lg:-bottom-12 lg:-right-24 z-0"
+            ></div>
+
+            <!-- Image on top -->
+            <img
+              style="animation: floating 3s infinite ease-in-out"
+              id="fg-svg"
+              src="./cc350d306da1c5083748abb4e4522c4d-removebg-preview.png"
+              class="w-auto h-140 relative z-10"
+            />
+          </div>
         </div>
-        <div
-          id="bg-svg"
-          class="hidden lg:block overflow-hidden bg-red-800 hover:bg-green-600 rounded-l-full absolute h-80 w-2/4 lg:-bottom-24 lg:-right-36"
-        ></div>
       </div>
     </section>
 
-    <!-- <section class="w-100">
-      <div class="gradient-bg">
-        <svg xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="goo">
-              <feGaussianBlur
-                in="SourceGraphic"
-                stdDeviation="10"
-                result="blur"
-              />
-              <feColorMatrix
-                in="blur"
-                mode="matrix"
-                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-                result="goo"
-              />
-              <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-          </defs>
-        </svg>
-        <div class="gradients-container">
-          <div class="g1"></div>
-          <div class="g2"></div>
-          <div class="g3"></div>
-          <div class="g4"></div>
-          <div class="g5"></div>
-          <div class="interactive"></div>
+    <section class="section">
+      <h2>OUR<br />SERVICES</h2>
+      <div class="container">
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/d6/08/25/d608259fd52dcbeab51e18eea1af658a.jpg"
+                  alt="Customer Support"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                    arrow_outward
+                  </span></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Customer Support.</h3>
+            <p>
+              Fill out the form and the algorithm will offer the right team of
+              experts
+            </p>
+            <ul>
+              <li style="--clr-tag: #d3b19a" class="branding">branding</li>
+              <li style="--clr-tag: #70b3b1" class="packaging">packaging</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/e1/41/82/e141825792823772b3b82f0ab5c5adef.jpg"
+                  alt="Tonic"
+                />
+              </div>
+              <div class="icon">
+                <div class="imgBox">
+                  <video autoplay muted loop playsinline>
+                    <source
+                      src="./Animation - 1744658281064.webm"
+                      type="video/webm"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3>AI Intergration</h3>
+            <p>
+              Fill out the form and the algorithm will offer the right team of
+              experts
+            </p>
+            <ul>
+              <li style="--clr-tag: #d3b19a" class="branding">branding</li>
+              <li style="--clr-tag: #d05fa2" class="marketing">marketing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/92/df/dc/92dfdcb7dfb06eb406e33967ec0bda8c.jpg"
+                  alt="HR AGENT"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                    arrow_outward
+                  </span></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3>HR & Recriutment</h3>
+            <p>
+              Fill out the form and the algorithm will offer the right team of
+              experts
+            </p>
+            <ul>
+              <li style="--clr-tag: #d3b19a" class="branding">branding</li>
+              <li style="--clr-tag: #70b3b1" class="packaging">packaging</li>
+              <li style="--clr-tag: #d05fa2" class="marketing">marketing</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section> -->
-    <!-- <h1 class="text-3xl font-bold underline">Hello world!</h1> -->
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const interBubble = document.querySelector(".interactive");
-        let curX = 0;
-        let curY = 0;
-        let tgX = 0;
-        let tgY = 0;
-
-        function move() {
-          curX += (tgX - curX) / 20;
-          curY += (tgY - curY) / 20;
-          interBubble.style.transform = `translate(${Math.round(
-            curX
-          )}px, ${Math.round(curY)}px)`;
-          requestAnimationFrame(() => {
-            move();
-          });
-        }
-
-        window.addEventListener("mousemove", (event) => {
-          tgX = event.clientX;
-          tgY = event.clientY;
-        });
-
-        move();
-      });
-    </script> -->
+    </section>
     <script>
       const image = document.getElementById("rotating-image");
 
@@ -563,6 +609,99 @@
         };
 
         updateCount();
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".deconstructed-card");
+
+        cards.forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+
+            const xDeg = (y - 0.5) * 8;
+            const yDeg = (x - 0.5) * -8;
+
+            card.style.transform = `perspective(1200px) rotateX(${xDeg}deg) rotateY(${yDeg}deg)`;
+
+            const layers = card.querySelectorAll(".card-layer");
+
+            layers.forEach((layer, index) => {
+              const depth = 30 * (index + 1);
+              const translateZ = depth;
+              const offsetX = (x - 0.5) * 10 * (index + 1);
+              const offsetY = (y - 0.5) * 10 * (index + 1);
+
+              layer.style.transform = `translate3d(${offsetX}px, ${offsetY}px, ${translateZ}px)`;
+            });
+
+            const waveSvg = card.querySelector(".wave-svg");
+            if (waveSvg) {
+              const moveX = (x - 0.5) * -20;
+              const moveY = (y - 0.5) * -20;
+              waveSvg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+
+              const wavePaths = waveSvg.querySelectorAll(
+                "path:not(:first-child)"
+              );
+              wavePaths.forEach((path, index) => {
+                const factor = 1 + index * 0.5;
+                const waveX = moveX * factor * 0.5;
+                const waveY = moveY * factor * 0.3;
+                path.style.transform = `translate(${waveX}px, ${waveY}px)`;
+              });
+            }
+
+            const bgObjects = card.querySelectorAll(".bg-object");
+            bgObjects.forEach((obj, index) => {
+              const factorX = (index + 1) * 10;
+              const factorY = (index + 1) * 8;
+              const moveX = (x - 0.5) * factorX;
+              const moveY = (y - 0.5) * factorY;
+
+              if (obj.classList.contains("square")) {
+                obj.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
+              } else if (obj.classList.contains("triangle")) {
+                obj.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) scale(1)`;
+              } else {
+                obj.style.transform = `translate(${moveX}px, ${moveY}px)`;
+              }
+            });
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+
+            const layers = card.querySelectorAll(".card-layer");
+            layers.forEach((layer) => {
+              layer.style.transform = "";
+            });
+
+            const waveSvg = card.querySelector(".wave-svg");
+            if (waveSvg) {
+              waveSvg.style.transform = "";
+
+              const wavePaths = waveSvg.querySelectorAll(
+                "path:not(:first-child)"
+              );
+              wavePaths.forEach((path) => {
+                path.style.transform = "";
+              });
+            }
+
+            const bgObjects = card.querySelectorAll(".bg-object");
+            bgObjects.forEach((obj) => {
+              if (obj.classList.contains("square")) {
+                obj.style.transform = "rotate(45deg) translateY(-20px)";
+              } else if (obj.classList.contains("triangle")) {
+                obj.style.transform = "translate(-50%, -50%) scale(0.5)";
+              } else {
+                obj.style.transform = "translateY(20px)";
+              }
+            });
+          });
+        });
       });
     </script>
   </body>
