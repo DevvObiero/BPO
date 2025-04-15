@@ -325,9 +325,9 @@ a {
       li {
         text-transform: uppercase;
         background: var(--clr-tag);
-        color: #282828;
+        color: white;
         font-weight: 700;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         padding: 0.375rem 0.625rem;
         border-radius: 0.188rem;
       }
@@ -442,4 +442,20 @@ a {
 
 .marketing {
   color: darken(teal, 40%);
+}
+
+.flag-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+}
+
+.flag-list li {
+  background-color: var(--clr-tag);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
