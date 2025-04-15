@@ -468,6 +468,9 @@
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
+  .py-100 {
+    padding-block: calc(var(--spacing) * 100);
+  }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
   }
@@ -943,11 +946,11 @@ a {
   display: inline-block;
   text-decoration: none;
 }
-.container {
-  margin-top: 5em;
+.containerr {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  padding-top: 100px;
   .card {
     &:nth-child(1) .box .icon .iconBox {
       background: black;
@@ -1084,6 +1087,23 @@ a {
   border-radius: 8px;
   font-weight: bold;
   text-transform: capitalize;
+}
+.card-hidden {
+  display: none;
+}
+.show-more-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+.show-more-btn:hover {
+  background-color: #333;
 }
 @property --tw-translate-x {
   syntax: "*";

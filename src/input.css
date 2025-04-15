@@ -296,11 +296,16 @@ a {
   text-decoration: none;
 }
 
-.container {
-  margin-top: 5em;
+.containerr {
+  /* margin-top: 5em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 2rem;
+  gap: 2rem; */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem; /* Adjust spacing */
+  padding-top: 100px;
 
   .card {
     &:nth-child(1) .box .icon .iconBox {
@@ -458,4 +463,23 @@ a {
   border-radius: 8px;
   font-weight: bold;
   text-transform: capitalize;
+}
+
+.card-hidden {
+  display: none;
+}
+.show-more-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #333;
 }

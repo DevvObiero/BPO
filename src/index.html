@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 
   <body>
@@ -58,7 +64,7 @@
             <a
               href="#FEATURED"
               class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
-              >AI INTERGRATIONS</a
+              >WHY US</a
             >
           </li>
           <li>
@@ -361,7 +367,7 @@
           <div
             class="flex flex-1 flex-col p-10 items-center lg:items-start z-10"
           >
-            <h1 class="text-5xl text-blue-950">WHY KENYA?</h1>
+            <h1 class="  text-5xl text-blue-950">WHY KENYA?</h1>
             <p
               class="text-gray-500 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
             >
@@ -398,9 +404,9 @@
       </div>
     </section>
 
-    <section class="section">
-      <h2>OUR<br />SERVICES</h2>
-      <div class="container">
+    <section class="section py-100 ">
+      <h2 class="reveal-text opacity-0 translate-y-8 transition-all duration-1000">OUR<br />SERVICES</h2>
+      <div class="containerr">
         <div class="card">
           <div class="card-inner" style="--clr: #fff">
             <div class="box">
@@ -413,9 +419,7 @@
               <div class="icon">
                 <a href="#" class="iconBox">
                   <span class="material-symbols-outlined">
-                    arrow_outward
-                  </span></a
-                >
+                ></a>
               </div>
             </div>
           </div>
@@ -481,9 +485,7 @@
               <div class="icon">
                 <a href="#" class="iconBox">
                   <span class="material-symbols-outlined">
-                    arrow_outward
-                  </span></a
-                >
+                ></a>
               </div>
             </div>
           </div>
@@ -501,7 +503,99 @@
             </ul>
           </div>
         </div>
+        <div class="card extra-card card-hidden">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/d6/08/25/d608259fd52dcbeab51e18eea1af658a.jpg"
+                  alt="Customer Support"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Content Creation and Creative Services </h3>
+            <p>
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div> <div class="card extra-card card-hidden">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/ce/bf/94/cebf94c663776eb1270c0d065ac072cd.jpg"
+                  alt="Customer Support"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Sales and marketing support</h3>
+            <p>
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div> <div class="card extra-card card-hidden">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/474x/c8/8b/72/c88b72a8667fa5472e51f3b8f2a6e634.jpg"
+                  alt="SALES"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h3> eCommerce Support</h3>
+            <p>
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <button id="toggleCards" class="show-more-btn">
+        Show More
+      </button>
+      
     </section>
     <script>
       const image = document.getElementById("rotating-image");
@@ -572,31 +666,6 @@
 
       revealElements.forEach((el) => observerr.observe(el));
 
-      //   document.addEventListener("DOMContentLoaded", () => {
-      //     const interBubble = document.querySelector(".interactive");
-      //     let curX = 0;
-      //     let curY = 0;
-      //     let tgX = 0;
-      //     let tgY = 0;
-
-      //     function move() {
-      //       curX += (tgX - curX) / 20;
-      //       curY += (tgY - curY) / 20;
-      //       interBubble.style.transform = `translate(${Math.round(
-      //         curX
-      //       )}px, ${Math.round(curY)}px)`;
-      //       requestAnimationFrame(() => {
-      //         move();
-      //       });
-      //     }
-
-      //     window.addEventListener("mousemove", (event) => {
-      //       tgX = event.clientX;
-      //       tgY = event.clientY;
-      //     });
-
-      //     move();
-      //   });
       window.addEventListener("DOMContentLoaded", () => {
         const counter = document.getElementById("count-up");
         let count = 0;
@@ -708,6 +777,15 @@
           });
         });
       });
+
+      document.getElementById("toggleCards").addEventListener("click", function () {
+  const hiddenCards = document.querySelectorAll(".extra-card");
+  hiddenCards.forEach((card) => card.classList.toggle("card-hidden"));
+
+  this.textContent =
+    this.textContent === "Show More" ? "Show Less" : "Show More";
+});
+
     </script>
   </body>
 </html>
