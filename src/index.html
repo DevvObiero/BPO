@@ -324,14 +324,14 @@
           alt="Microsoft"
         />
         <img
-          src="https://cdn.worldvectorlogo.com/logos/apple-11.svg"
+          src="https://bpoak.co.ke/wp-content/uploads/2022/11/ajira-1024x268.png"
           class="h-7 w-auto"
-          alt="Apple"
+          alt="Ajira"
         />
         <img
-          src="https://cdn.worldvectorlogo.com/logos/google-1-1.svg"
+          src="https://bpoak.co.ke/wp-content/uploads/2022/11/poweredby.png"
           class="h-7 w-auto"
-          alt="Google"
+          alt="Kenya Private Sectore"
         />
         <img
           src="https://cdn.worldvectorlogo.com/logos/logo-amazon.svg"
@@ -382,11 +382,66 @@
               United States.”
             </p>
             <button
-              type="button"
-              class="btn btn-purple hover:bg-white hover:text-black"
-            >
-              More Info
-            </button>
+            type="button"
+            id="toggleAccordion"
+            class="btn bg-red-600 text-white px-6 py-2 rounded-xl hover:cursor-pointer hover:bg-green-700 hover:text-white hover:text-black transition duration-200"
+          >
+            More Info
+          </button>
+          
+          <div id="accordion" class="w-full space-y-2 mt-6 hidden">
+            <!-- Accordion Item 1 -->
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel1">
+                <span class="font-medium">High‑quality internet</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel1" class="hidden px-4 pb-4 text-gray-600">
+                Kenya’s undersea cables and extensive 4G/5G rollout deliver reliable bandwidth.
+              </div>
+            </div>
+          
+
+            <!-- Accordion Item 2 -->
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel2">
+                <span class="font-medium">Skilled tech workforce</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel2" class="hidden px-4 pb-4 text-gray-600">
+                Kenya’s young, tech-savvy population is ready for digital tasks and innovation.
+              </div>
+            </div>
+          
+            <!-- Add more items with unique IDs -->
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel3">
+                <span class="font-medium">English Workforce</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel3" class="hidden px-4 pb-4 text-gray-600">
+                Kenya has a large availability of highly skilled, English-speaking talent who speak with a more neutral accent making its citizens suitable for call center jobs and other client-facing outsourcing duties.
+              </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel4">
+                <span class="font-medium">Digitally Skilled Workforce</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel4" class="hidden px-4 pb-4 text-gray-600">
+                Kenya's growing pool of skilled digital freelancers accredited to the Ajira Digital Program training. As of 2022, there were 1,933,011 million digital workers working either as freelancers or in BPOs
+              </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel5">
+                <span class="font-medium">Affordable Labor Cost</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel5" class="hidden px-4 pb-4 text-gray-600">
+                The labor in Kenya is cheap and can potentially reduce the operational costs of global source market companie
+              </div>
+            </div>
+          </div>
           </div>
 
           <!-- RIGHT SIDE: BACKGROUND + IMAGE -->
@@ -997,23 +1052,57 @@ document.querySelectorAll('.card').forEach(card => {
 });
 // cards 
 
-  const cards = document.querySelectorAll('.cardd');
+const cards = document.querySelectorAll('.cardd');
 
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
+document.addEventListener('mousemove', (e) => {
+  const { clientX, clientY } = e;
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
 
-    cards.forEach((card, index) => {
-      const offsetX = (clientX - centerX) / 200;
-      const offsetY = (clientY - centerY) / 200;
-      const rotate = (clientX - centerX) / 200;
+  cards.forEach((card, index) => {
+    const offsetX = (clientX - centerX) / 50; // was 200
+    const offsetY = (clientY - centerY) / 80; // was 200
+    const rotate = (clientX - centerX) / 80;  // was 200
 
-      card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotate + index}deg)`;
+    card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotate + index}deg)`;
+  });
+});
+
+      // dropdouwn as i called it  
+     
+  // Show or hide the full accordion section
+  document.getElementById('toggleAccordion').addEventListener('click', () => {
+    const accordion = document.getElementById('accordion');
+    accordion.classList.toggle('hidden');
+  });
+
+  // Toggle individual panels inside the accordion
+  document.querySelectorAll('#accordion button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panelId = btn.dataset.target;
+      const panel = document.getElementById(panelId);
+      const isOpen = !panel.classList.contains('hidden');
+
+      // Optional: close all others
+      document.querySelectorAll('#accordion div[id^="panel"]').forEach(p => {
+        p.classList.add('hidden');
+      });
+
+      // Toggle current
+      panel.classList.toggle('hidden', isOpen);
+
+      // Change "+" to "-" depending on state
+      document.querySelectorAll('#accordion button span:last-child').forEach(icon => {
+        icon.textContent = '+';
+      });
+      if (!isOpen) {
+        btn.querySelector('span:last-child').textContent = '−';
+      }
     });
   });
-  
- 
+
+
+           
 
 
     </script>
