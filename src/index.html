@@ -8,6 +8,11 @@
       href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- ScrollTrigger Plugin (for scroll animations) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -597,6 +602,21 @@
       </button>
       
     </section>
+    <section
+    id="BREATHE"
+    class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
+  >
+    <h1
+      class="text-center font-bold text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
+    >
+      WHY US
+    </h1>
+    <h2
+      class="text-center font-bold text-red-700 absolute top-24 left-1/2 transform -translate-x-1/2 text-[clamp(1rem,5vw,3rem)]"
+    >
+      WHY US
+    </h2>
+  </section>
     <section class="relative w-full h-[100vh] bg-white flex items-center justify-center py-40 overflow-hidden">
       <!-- Centered "Problem" text -->
       <h2 class="absolute text-4xl font-bold  text-center text-gray-800 z-10">
@@ -604,45 +624,56 @@
       </h2>
     
       <!-- Scattered Cards -->
-      <div class="absolute w-full h-full">
+      <div class="absolute  reveal-text opacity-0 translate-y-8 transition-all duration-1000  w-full h-full">
         <!-- Card 1 -->
-        <div class="absolute top-[10%] left-[5%] rotate-[10deg]">
+        <div class="  transition-all duration-100 cardd absolute top-[10%] left-[5%] rotate-[10deg]">
           <img src="./Your paragraph text.png" alt="Request 1" class="w-40 rounded-xl shadow-lg">
         </div>
-    
-        <!-- Card 2 -->
-        <div class="absolute top-[20%] right-[8%] rotate-[-8deg]">
-          <img src="./Your paragraph text.png" alt="Request 2" class="w-44 rounded-xl shadow-lg">
-        </div>
-    
-        <!-- Card 3 -->
-        <div class="absolute top-[50%] left-[12%] rotate-[5deg]">
-          <img src="./Your paragraph text.png" alt="Request 3" class="w-36 rounded-xl shadow-lg">
-        </div>
-    
         <!-- Card 4 -->
-        <div class="absolute bottom-[20%] right-[10%] rotate-[12deg]">
-          <img src="./Your paragraph text.png" alt="Request 4" class="w-40 rounded-xl shadow-lg">
+        <div class=" transition-all duration-100 cardd absolute bottom-[20%] right-[10%] rotate-[12deg]">
+          <img src="./Your paragraph text (3).png" alt="Request 4" class="w-40 rounded-xl shadow-lg">
         </div>
     
         <!-- Card 5 -->
-        <div class="absolute bottom-[25%] left-[30%] rotate-[-6deg]">
-          <img src="./Your paragraph text.png" alt="Request 5" class="w-36 rounded-xl shadow-lg">
+        <div class=" transition-all duration-100 cardd absolute bottom-[25%] left-[30%] rotate-[-6deg]">
+          <img src="./Your paragraph text (4).png" alt="Request 5" class="w-36 rounded-xl shadow-lg">
         </div>
     
         <!-- Card 6 -->
-        <div class="absolute top-[35%] right-[25%] rotate-[7deg]">
-          <img src="./Your paragraph text.png" alt="Request 6" class="w-44 rounded-xl shadow-lg">
+        <div class="transition-all duration-100  cardd absolute top-[35%] right-[25%] rotate-[7deg]">
+          <img src="./Your paragraph text (5).png" alt="Request 6" class="w-44 rounded-xl shadow-lg">
         </div>
       <!-- Card 7 -->
-<div class="absolute top-[5%] right-[30%] rotate-[5deg]">
-  <img src="./Your paragraph text.png" alt="Request 7" class="w-40 rounded-xl shadow-lg">
+<div class="absolute transition-all duration-100 cardd top-[5%] right-[30%] rotate-[5deg]">
+  <img src="./Your paragraph text (6).png" alt="Request 7" class="w-40 rounded-xl shadow-lg">
 </div>
 
-<!-- Card 8 -->
-<div class="absolute top-[5%] left-[25%] rotate-[-5deg]">
-  <img src="./Your paragraph text.png" alt="Request 8" class="w-40 rounded-xl shadow-lg">
-</div>
+        <!-- Card 2 -->
+        <div class="transition-all duration-100  cardd absolute top-[20%] right-[8%] rotate-[-8deg]">
+          <img src="./Your paragraph text (1).png" alt="Request 2" class="w-44 rounded-xl shadow-lg">
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="transition-all duration-100 cardd absolute top-[50%] left-[12%] rotate-[5deg]">
+          <img src="./Your paragraph text (2).png" alt="Request 3" class="w-36 rounded-xl shadow-lg">
+        </div>
+    
+    
+<!-- Add up to 10+ like this -->
+<section id="card-section" class="relative min-h-screen w-full overflow-hidden">
+  <!-- Card 1 -->
+  <div class="absolute opacity-0 z-20 transition-all duration-700 cardd" data-index="1">
+    <img src="./Your paragraph text.png" alt="Card" class="w-40 rounded-xl shadow-lg">
+  </div>
+
+  <!-- Card 2 -->
+  <div class="absolute opacity-0 z-20 transition-all duration-700 cardd" data-index="2">
+    <img src="./Your paragraph text.png" alt="Card" class="w-44 rounded-xl shadow-lg">
+  </div>
+
+  <!-- Add more cards... -->
+</section>
+
 
       </div>
     </section>
@@ -835,6 +866,37 @@
   this.textContent =
     this.textContent === "Show More" ? "Show Less" : "Show More";
 });
+
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', () => {
+    gsap.to(card, { y: -10, scale: 1.05, duration: 0.3 });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, { y: 0, scale: 1, duration: 0.3 });
+  });
+});
+// cards 
+
+  const cards = document.querySelectorAll('.cardd');
+
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    cards.forEach((card, index) => {
+      const offsetX = (clientX - centerX) / 200;
+      const offsetY = (clientY - centerY) / 200;
+      const rotate = (clientX - centerX) / 200;
+
+      card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotate + index}deg)`;
+    });
+  });
+  
+ 
+
 
     </script>
   </body>
