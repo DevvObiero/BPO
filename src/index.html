@@ -851,6 +851,87 @@
     </div>
   </div>
 </section>
+<section
+id="BREATHE"
+class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
+>
+<h1
+  class="text-center font-bold text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
+>
+  TESTIMONIALS
+</h1>
+<h2
+  class="text-center font-bold text-red-700 absolute top-24 left-1/2 transform -translate-x-1/2 text-[clamp(1rem,5vw,3rem)]"
+>
+TESTIMONIALS
+</h2>
+</section>
+<section class="mb-20 px-4">
+  <div id="testimonialBox" class="w-full max-w-4xl mx-auto p-12 rounded-2xl shadow-2xl text-center transition-all duration-500 bg-white text-black">
+    <p id="testimonialText" class="text-xl italic mb-4">
+      "This platform has truly changed my life. Highly recommend to everyone!"
+    </p>
+    <h3 id="testimonialName" class="text-lg font-bold">- John Doe</h3>
+
+    <!-- Avatar Circles -->
+    <div class="flex justify-center gap-6 mt-10">
+      <img onclick="showTestimonial(0)" src="https://i.pinimg.com/736x/37/12/8d/37128d8d12dd75afdba449b9fa600c9d.jpg" alt="John" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(1)" src="https://randomuser.me/api/portraits/women/20.jpg" alt="Sarah" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(2)" src="https://randomuser.me/api/portraits/men/30.jpg" alt="Mike" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(3)" src="https://randomuser.me/api/portraits/women/40.jpg" alt="Aisha" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(4)" src="https://randomuser.me/api/portraits/men/50.jpg" alt="Carlos" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+    </div>
+  </div>
+</section>
+<footer class="bg-gray-900 text-gray-200 py-12 mt-20">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    
+    <!-- Logo & About -->
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4">DevObiero</h2>
+      <p class="text-sm">
+        Passionate developer building creative and impactful digital experiences. Let's build something amazing.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition">About</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Contact</h3>
+      <p class="text-sm">Email: <a href="mailto:devobiero@email.com" class="text-blue-400 hover:underline">devobiero@email.com</a></p>
+      <p class="text-sm">Phone: +254 712 345 678</p>
+    </div>
+
+    <!-- Socials -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Follow Me</h3>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
+    © 2025 DevObiero. All rights reserved.
+  </div>
+</footer>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <script>
       const image = document.getElementById("rotating-image");
 
@@ -1101,9 +1182,53 @@ document.addEventListener('mousemove', (e) => {
     });
   });
 
+ 
+  const testimonials = [
+    {
+      text: "This platform has truly changed my life. Highly recommend to everyone!",
+      name: "- John Doe",
+      bg: "bg-green-500",
+      textColor: "text-white"
+    },
+    {
+      text: "A smooth and seamless experience from start to finish.",
+      name: "- Sarah Lee",
+      bg: "bg-red-600",
+      textColor: "text-white"
+    },
+    {
+      text: "Super clean interface, great support team, and fast delivery!",
+      name: "- Mike Kim",
+      bg: "bg-white",
+      textColor: "text-black"
+    },
+    {
+      text: "I loved the responsiveness and how intuitive everything felt.",
+      name: "- Aisha Mohammed",
+      bg: "bg-black",
+      textColor: "text-white"
+    },
+    {
+      text: "Hands down one of the best tools I’ve ever used.",
+      name: "- Carlos Rivera",
+      bg: "bg-black",
+      textColor: "text-white"
+    }
+  ];
 
-           
+  function showTestimonial(index) {
+    const box = document.getElementById("testimonialBox");
+    const text = document.getElementById("testimonialText");
+    const name = document.getElementById("testimonialName");
 
+    box.className = "w-full max-w-4xl mx-auto p-12 rounded-2xl shadow-2xl text-center transition-all duration-500";
+
+    // Add dynamic background and text color
+    box.classList.add(testimonials[index].bg, testimonials[index].textColor);
+
+    text.textContent = testimonials[index].text;
+    name.textContent = testimonials[index].name;
+  }
 
     </script>
   </body>
