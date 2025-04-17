@@ -483,3 +483,16 @@ a {
 .show-more-btn:hover {
   background-color: #333;
 }
+
+.cards-container:hover .cardd {
+  filter: blur(4px);
+  transition: all 0.3s ease;
+  transform: scale(1) translateY(0);
+  z-index: 0;
+}
+
+.cards-container .cardd:hover {
+  filter: none;
+  transform: scale(1.05) translateY(-10px);
+  z-index: 10;
+}
