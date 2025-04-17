@@ -180,6 +180,11 @@
         />
       </div>
     </section>
+    
+  <div id="blocks-container">
+    <div id="blocks"></div>
+  </div>
+
     <section
       id="BREATHE"
       class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
@@ -686,8 +691,8 @@
 
     <section class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000   cards-container  relative w-full h-[100vh] bg-white flex items-center justify-center py-40 overflow-hidden">
       <!-- Centered "Problem" text -->
-      <h2 class="absolute text-4xl font-bold  text-center text-gray-800 z-10">
-        PROBLEMS
+      <h2 class="absolute text-4xl font-bold  text-center text-gray-800 z--1">
+   CHALLENGES
       </h2>
     
       <!-- Scattered Cards -->
@@ -705,7 +710,10 @@
         <div class=" transition-all duration-100 cardd absolute bottom-[25%] left-[30%] rotate-[-6deg]">
           <img src="./Your paragraph text (9).png" alt="Request 5" class="w-36 rounded-xl shadow-lg">
         </div>
-    
+     <!-- Card 5 -->
+     <div class=" transition-all duration-100 cardd absolute top-[9%] left-[27%] rotate-[-6deg]">
+      <img src="./Your paragraph text (9).png" alt="Request 5" class="w-36 rounded-xl shadow-lg">
+    </div>
         <!-- Card 6 -->
         <div class="transition-all duration-100  cardd absolute top-[35%] right-[25%] rotate-[7deg]">
           <img src="./Your paragraph text (11).png" alt="Request 6" class="w-44 rounded-xl shadow-lg">
@@ -864,10 +872,6 @@
   </div>
 </section>
 
-
-  <div id="blocks-container">
-    <div id="blocks"></div>
-  </div>
 
 <section
 id="BREATHE"
@@ -1306,8 +1310,6 @@ const observerrrr = new IntersectionObserver(entries => {
 
 elements.forEach(el => observerrrr.observe(el));
 
-
-
 window.addEventListener("DOMContentLoaded", () => {
   const blockContainer = document.getElementById("blocks");
   const blockSize = 50;
@@ -1322,13 +1324,24 @@ window.addEventListener("DOMContentLoaded", () => {
       const block = document.createElement("div");
       block.classList.add("block");
       block.dataset.index = i;
-      block.addEventListener("mousemove", highlightRandomNeighbors);
       blockContainer.appendChild(block);
     }
   }
 
-  function highlightRandomNeighbors() {
-    const index = parseInt(this.dataset.index);
+  // Function to calculate block index based on mouse position
+  function getBlockIndexFromPosition(x, y) {
+    const col = Math.floor(x / blockSize);
+    const row = Math.floor(y / blockSize);
+    return row * numCols + col;
+  }
+
+  // Function to highlight blocks based on cursor position
+  function highlightBlocksAroundCursor(event) {
+    const cursorX = event.clientX;
+    const cursorY = event.clientY;
+    const index = getBlockIndexFromPosition(cursorX, cursorY);
+
+    // Calculate neighbors of the block where the cursor is
     const neighbors = [
       index - 1,
       index + 1,
@@ -1345,15 +1358,14 @@ window.addEventListener("DOMContentLoaded", () => {
         Math.abs((i % numCols) - (index % numCols)) <= 1
     );
 
-    this.classList.add("highlight");
-    setTimeout(() => {
-      this.classList.remove("highlight");
-    }, 500);
+    // Highlight the block where the cursor is
+    blockContainer.children[index].classList.add("highlight");
 
+    // Highlight random neighbors
     shuffleArray(neighbors)
       .slice(0, 1)
-      .forEach((index) => {
-        const neighbor = blockContainer.children[index];
+      .forEach((neighborIndex) => {
+        const neighbor = blockContainer.children[neighborIndex];
         if (neighbor) {
           neighbor.classList.add("highlight");
           setTimeout(() => {
@@ -1361,8 +1373,14 @@ window.addEventListener("DOMContentLoaded", () => {
           }, 500);
         }
       });
+
+    // Remove the highlight after a brief timeout
+    setTimeout(() => {
+      blockContainer.children[index].classList.remove("highlight");
+    }, 500);
   }
 
+  // Shuffle array function for randomizing neighbors
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -1371,9 +1389,10 @@ window.addEventListener("DOMContentLoaded", () => {
     return array;
   }
 
+  // Create blocks and add mousemove event listener to window
   createBlocks();
+  window.addEventListener("mousemove", highlightBlocksAroundCursor);
 });
-
 
 
 
