@@ -533,12 +533,16 @@ a {
     filter: blur(40px);
   }
 }
-/* .text2 i:hover {
+.text2 i:hover {
   cursor: pointer !important;
-  color: bisque;
-} */
+  color: tomato;
+}
 a#autoBlur {
   text-decoration: none;
   color: inherit;
   margin: 0 10px;
+}
+
+.animate-autoShow {
+  animation: autoShowAnimation 0.6s ease-out both;
 }
