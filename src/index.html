@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link
       href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -36,13 +38,20 @@
         <div class="lg:hidden flex items-center">
           <button id="burger-menu-btn" class="text-black"></button>
         </div>
-
+       
+                  
         <!-- Menu -->
         <ul
           id="menu"
           class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
         >
-          <li>
+        <!-- Dark Mode Toggle with Boxicons -->
+<li>
+
+  <li class="cursor-pointer text-2xl text-yellow-500 dark:text-black transition duration-300" onclick="toggleDarkMode()" id="darkModeToggle">
+    <i class='bx bx-sun'></i>
+  </li>
+  
             <a
               href="#HOME"
               class="transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
@@ -1252,7 +1261,22 @@ document.addEventListener('mousemove', (e) => {
     text.textContent = testimonials[index].text;
     name.textContent = testimonials[index].name;
   }
+//  moon sun 
 
+  function toggleDarkMode() {
+    const html = document.documentElement;
+    const toggleIcon = document.getElementById("darkModeToggle").querySelector("i");
+
+    html.classList.toggle("dark");
+
+    if (html.classList.contains("dark")) {
+      toggleIcon.classList.remove("bx-sun");
+      toggleIcon.classList.add("bx-moon");
+    } else {
+      toggleIcon.classList.remove("bx-moon");
+      toggleIcon.classList.add("bx-sun");
+    }
+  }
     </script>
   </body>
 </html>
