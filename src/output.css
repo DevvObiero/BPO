@@ -214,6 +214,9 @@
   .relative {
     position: relative;
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
   .top-8 {
     top: calc(var(--spacing) * 8);
   }
@@ -270,6 +273,9 @@
   }
   .bottom-\[25\%\] {
     bottom: 25%;
+  }
+  .-left-52 {
+    left: calc(var(--spacing) * -52);
   }
   .-left-72 {
     left: calc(var(--spacing) * -72);
