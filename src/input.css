@@ -533,10 +533,10 @@ a {
     filter: blur(40px);
   }
 }
-.text2 i:hover {
+/* .text2 i:hover {
   cursor: pointer !important;
   color: tomato;
-}
+} */
 a#autoBlur {
   text-decoration: none;
   color: inherit;

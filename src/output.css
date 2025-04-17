@@ -1557,10 +1557,6 @@ a {
     filter: blur(40px);
   }
 }
-.text2 i:hover {
-  cursor: pointer !important;
-  color: tomato;
-}
 a#autoBlur {
   text-decoration: none;
   color: inherit;
@@ -1798,6 +1794,12 @@ a#autoBlur {
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+    }
+  }
+}
+e-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
     }
