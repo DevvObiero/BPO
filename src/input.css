@@ -681,3 +681,8 @@ a#autoBlur {
 #page-header2 p {
   color: tomato;
 }
+
+::selection {
+  background-color: #1e293b; /* dark gray-blue */
+  color: tomato; /* yellow-400 */
+}
