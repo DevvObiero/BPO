@@ -1,12 +1,22 @@
-@import "tailwindcss";
-
 html,
 body {
   font-family: "Dongle", sans-serif;
   margin: 0;
   padding: 0;
 }
+@import "tailwindcss";
 
+@config "./tailwind.config.js";
+
+@theme {
+  --color-bg-dark: #1a0e0e; /* Deep blue-black, close to black but not gray */
+  --color-text-dark: #ffffff; /* Keep white text for contrast */
+}
+
+.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
 :root {
   --color-bg1: #dff9fb;
   --color-bg2: #ffffff;

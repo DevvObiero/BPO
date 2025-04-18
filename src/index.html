@@ -19,7 +19,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 
-  <body>
+  <body class="dark:bg-[--color-bg-dark]">
   
     <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
       <nav
@@ -38,7 +38,7 @@
 
         <!-- Burger Menu for Small Screens -->
         <div class="lg:hidden flex items-center">
-          <button id="burger-menu-btn" class="text-black"></button>
+          <button id="burger-menu-btn" class=" text-black"></button>
         </div>
        
                   
@@ -49,15 +49,17 @@
         >
         <!-- Dark Mode Toggle with Boxicons -->
 <li>
+  
 
-  <li class="cursor-pointer text-2xl text-yellow-500 dark:text-black transition duration-300" onclick="toggleDarkMode()" id="darkModeToggle">
-    <i class='bx bx-sun'></i>
+
+  <li class="cursor-pointer text-2xl text-yellow-500 dark:text-white transition duration-300" id="darkModeToggle">
+    <i id="theme-toggle" class="bx bx-sun"></i>
   </li>
   
             <a
               href="#HOME"
               id="HOME"
-              class="transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
+              class="dark:text-white  transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
             >
               HOME
             </a>
@@ -66,42 +68,42 @@
           <li>
             <a
               href="#ABOUT"
-              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent dark:text-white  hover:border-green-400 hover:text-red-500 transition duration-300"
               >ABOUT</a
             >
           </li>
           <li>
             <a
               href="#SERVICES"
-              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
               >SERVICES</a
             >
           </li>
           <li>
             <a
               href="#WHY"
-              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
               >WHY US</a
             >
           </li>
           <li>
             <a
               href="blog.html"
-              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
               >BLOG</a
             >
           </li>
           <li>
             <a
               href="career.html"
-              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
               >CAREERS</a
             >
           </li>
           <li>
             <a
               href="#CONTACT"
-              class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
               >CONTACT US</a
             >
           </li>
@@ -134,7 +136,7 @@
     playsinline
     class="w-20 h-20"
   ></video>
-  <p class="text-[10px] mt-1 text-black">How can I help you today?</p>
+  <p class="text-[10px] mt-1 dark:text-black text-black">How can I help you today?</p>
 </div>
 
     <!-- Chatbot Modal -->
@@ -202,12 +204,12 @@
     
       <!-- Text content -->
       <div
-        class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 absolute right-0 p-6 md:p-12 z-10"
+        class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000 absolute right-0 p-6 md:p-12 z-10"
       >
-        <h1 class="text-3xl md:text-6xl text-black font-bold mb-4 w-139">
+        <h1 class=" dark:text-white text-3xl md:text-6xl  font-bold mb-4 w-139">
           EMPOWERING GLOBAL BUSINESSES
         </h1>
-        <p class="text-lg md:text-xl text-black mb-6">
+        <p class="text-lg md:text-xl dark:text-white text-black mb-6">
           With Kenyan Talent & AI
         </p>
         <button
@@ -215,7 +217,7 @@
         >
           Join Now
         </button>
-        <p class="text-lg md:text-xl text-black mb-6 mt-8">
+        <p class=" dark:text-white text-lg md:text-xl text-black mb-6 mt-8">
           Trusted by
           <span id="count-up" class="text-red-500 font-bold">0</span> companies
           across the globe
@@ -226,7 +228,7 @@
         class="absolute -right-52 top-96 h-[330px] w-auto z-0"
       >
         <img
-          src="./istockphoto-596811948-612x612.jpg"
+          src="./istockphoto-596811948-612x612-removebg-preview.png"
           alt="Decorative"
           class="h-full w-auto rotate-slow"
         />
@@ -255,18 +257,18 @@
     <section class="py-16 px-4 md:px-20" id="statsSection">
       <div class="max-w-7xl mx-auto text-center">
         <h2
-          class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+          class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000 text-3xl md:text-4xl font-bold text-gray-900 mb-4"
         >
           We are global leaders in next-generation digital solutions and
           consulting services
         </h2>
-        <p class="text-lg text-gray-600 mb-12">
+        <p class="text-lg dark:text-gray-50   text-gray-600 mb-12">
           Currently operating in <strong>15 countries</strong> and creating
           <strong>1200 high tech jobs</strong> globally.
         </p>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-left"
+          class="grid  dark:text-white grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-left"
         >
           <div>
             <p
@@ -275,31 +277,31 @@
             >
               0
             </p>
-            <p class="text-gray-700">Employees Worldwide</p>
+            <p class="text-gray-700 dark:text-white">Employees Worldwide</p>
           </div>
 
           <div>
             <p class="text-4xl font-bold text-red-600 counter" data-target="15">
               0
             </p>
-            <p class="text-gray-700">No of Countries</p>
+            <p class="text-gray-700 dark:text-white ">No of Countries</p>
           </div>
 
           <div>
             <p
-              class="text-4xl font-bold text-red-600 counter"
+              class="text-4xl font-bold text-red-600 dark:text-white counter"
               data-target="18000000"
             >
               0
             </p>
-            <p class="text-gray-700">Subscribers On Our Platform</p>
+            <p class="text-gray-700 dark:text-white">Subscribers On Our Platform</p>
           </div>
 
           <div>
             <p class="text-4xl font-bold text-red-600 counter" data-target="35">
               0
             </p>
-            <p class="text-gray-700">Countries with Customer Footprint</p>
+            <p class="text-gray-700 dark:text-white">Countries with Customer Footprint</p>
           </div>
 
           <div>
@@ -309,39 +311,39 @@
             >
               0
             </p>
-            <p class="text-gray-700">Trained Personnel in Our Institutions</p>
+            <p class="text-gray-700 dark:text-white">Trained Personnel in Our Institutions</p>
           </div>
 
           <div>
             <p
-              class="text-4xl font-bold text-red-600 counter"
+              class="text-4xl font-bold text-red-600 counter dark:text-white"
               data-target="470"
             >
               0
             </p>
-            <p class="text-gray-700">Implemented Projects</p>
+            <p class="text-gray-700 dark:text-white">Implemented Projects</p>
           </div>
 
           <div>
             <p class="text-4xl font-bold text-red-600 counter" data-target="1">
               0
             </p>
-            <p class="text-gray-700">Microsoft Testing Center in Africa</p>
+            <p class="text-gray-700 dark:text-white">Microsoft Testing Center in Africa</p>
           </div>
 
           <div>
             <p class="text-4xl font-bold text-red-600 counter" data-target="5">
               0
             </p>
-            <p class="text-gray-700">Appraised at CMMI Maturity Level 5</p>
+            <p class="text-gray-700 dark:text-white">Appraised at CMMI Maturity Level 5</p>
           </div>
         </div>
       </div>
     </section>
-    <h3 class="text-lg text-gray-600 mb-12 text-center">our clients</h3>
+    <h3 class="text-lg text-gray-600 mb-12 text-center dark:text-white">our clients</h3>
 
     <!-- Logo Carousel -->
-    <div class="w-full overflow-hidden bg-white py-6">
+    <div class="w-full overflow-hidden dark:bg-bg-dark   py-6">
       <div class="animate-scroll flex gap-10 items-center w-max">
         <!-- Repeat logos to simulate infinite loop -->
         <img
@@ -440,9 +442,9 @@
           <div
             class="flex flex-1 flex-col p-10 items-center lg:items-start z-10"
           >
-            <h1 class="  text-5xl text-blue-950">WHY KENYA?</h1>
+            <h1 class="  text-5xl  dark:text-white  text-blue-950">WHY KENYA?</h1>
             <p
-              class="text-gray-500 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+              class="text-gray-500  dark:text-white my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
             >
               “Kenya has a young, educated, entrepreneurial, and
               English-speaking workforce. Kenya generates over 90% of its energy
@@ -457,7 +459,7 @@
             More Info
           </button>
           
-          <div id="accordion" class="w-full space-y-2 mt-6 hidden">
+          <div id="accordion" class=" dark:text-white w-full space-y-2 mt-6 hidden">
             <!-- Accordion Item 1 -->
             <div class="border rounded-lg overflow-hidden">
               <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel1">
@@ -532,8 +534,8 @@
       </div>
     </section>
 
-    <section id="SERVICES" class="section py-100 ">
-      <h2 class="reveal-text opacity-0 translate-y-8 transition-all duration-1000">OUR<br />SERVICES</h2>
+    <section id="SERVICES" class="dark:text-white section py-100 ">
+      <h2 class="reveal-text dark:text-white opacity-0 translate-y-8 transition-all duration-1000">OUR<br />SERVICES</h2>
       <div class="containerr">
         <div class="card">
           <div class="card-inner" style="--clr: #fff">
@@ -551,14 +553,14 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content dark:text-white">
             <h3>Customer Support.</h3>
-            <p>
+            <p class="dark:text-white">
               Our customer support team ensures smooth communication, quick
               issue resolution, and dedicated assistance tailored to your
               business needs
             </p>
-            <ul class="flag-list">
+            <ul class="flag-lis t">
               <li style="--clr-tag: black">Live Chat</li>
               <li style="--clr-tag: red">Help Desk</li>
               <li style="--clr-tag: green">24/7 Support</li>
@@ -587,9 +589,9 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content dark:text-white">
             <h3>AI Intergration</h3>
-            <p>
+            <p class="dark:text-white">
               Supercharge your operations with intelligent automation. From
               chatbots to data analysis, we help integrate AI solutions that
               reduce costs, improve decision-making, and boost efficiency.
@@ -601,7 +603,7 @@
             </ul>
           </div>
         </div>
-        <div class="card">
+        <div class="card dark:text-white">
           <div class="card-inner" style="--clr: #fff">
             <div class="box">
               <div class="imgBox">
@@ -617,9 +619,9 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content dark:text-white">
             <h3>HR & Recriutment</h3>
-            <p>
+            <p class="dark:text-white">
               Find, manage, and retain top talent with ease. Our HR &
               recruitment services streamline hiring, onboarding, and employee
               management — tailored for your company’s unique culture
@@ -647,7 +649,7 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content dark:text-white">
             <h3>Content Creation and Creative Services </h3>
             <p>
               Our customer support team ensures smooth communication, quick
@@ -676,7 +678,7 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content dark:text-white">
             <h3>Sales and marketing support</h3>
             <p>
               Our customer support team ensures smooth communication, quick
@@ -690,7 +692,7 @@
             </ul>
           </div>
         </div> <div class="card extra-card card-hidden">
-          <div class="card-inner" style="--clr: #fff">
+          <div class="card-inner" style="--clr: #fff ">
             <div class="box">
               <div class="imgBox">
                 <img
@@ -705,7 +707,7 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content dark:text-white">
             <h3> eCommerce Support</h3>
             <p>
               Our customer support team ensures smooth communication, quick
@@ -727,7 +729,7 @@
     </section>
     <section
     id="BREATHE"
-    class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
+    class="reveal-text dark:text-white opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
   >
     <h1 id="WHY"
       class="text-center font-bold text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
@@ -741,9 +743,9 @@
     </h2>
   </section>
 
-    <section class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000   cards-container  relative w-full h-[100vh] bg-white flex items-center justify-center py-40 overflow-hidden">
+    <section class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000   cards-container  relative w-full h-[100vh]  flex items-center justify-center py-40 overflow-hidden">
       <!-- Centered "Problem" text -->
-      <h2 class="absolute text-4xl font-bold  text-center text-gray-800 z--1">
+      <h2 class="absolute text-4xl font-bold  text-center dark:text-white text-gray-800 z--1">
    CHALLENGES
       </h2>
     
@@ -786,12 +788,12 @@
         </div>
     
 </section>
-<section class="w-full bg-white py-24 px-6 flex items-center justify-center">
+<section class="w-full  py-24 px-6 flex items-center justify-center">
   <div class="max-w-4xl text-center">
-    <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+    <h3 class="text-3xl md:text-4xl font-bold dark:text-white text-gray-800 mb-6">
       IT'S <span class="text-red-600">NOT</span> JUST ABOUT FINDING PEOPLE — IT'S ABOUT SOLVING THE <span class="text-green-500">RIGHT</span> PROBLEMS.
     </h3>
-    <p class="text-lg text-gray-600 leading-relaxed">
+    <p class="text-lg dark:text-white text-gray-600 leading-relaxed">
       The game has changed.<br>
       Today’s businesses are building teams in a world where talent is global, expectations are higher, and time is never enough.
       <br><br>
@@ -809,7 +811,7 @@
     class="absolute -right-52 top-0 h-[330px] w-auto z-0"
   >
     <img
-      src="./istockphoto-596811948-612x612.jpg"
+      src="./istockphoto-596811948-612x612-removebg-preview.png"
       alt="Decorative"
       class="h-full w-auto rotate-slow"
     />
@@ -823,7 +825,7 @@
     class="absolute -left-52 top-0 h-[330px] w-auto z-0"
   >
     <img
-      src="./istockphoto-596811948-612x612.jpg"
+      src="./istockphoto-596811948-612x612-removebg-preview.png"
       alt="Decorative"
       class="h-full w-auto rotate-slow"
     />
@@ -832,11 +834,11 @@
   <!-- Other content of the section here -->
 </section>
 
-<section class=" bg-white py-20 px-4 text-center">
-  <h3 class="  reveal-text opacity-0 translate-y-8 transition-all duration-1000   text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-   THAT'S WHERE <span class="text-black">WE</span> COME IN.
+<section class=" dark:text-white py-20 px-4 text-center">
+  <h3 class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000   text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+   THAT'S WHERE <span class="text-black dark:text-red-400">WE</span> COME IN.
   </h3>
-  <p class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000   text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+  <p class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000   text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
     We stack real-world solutions to real-world problems. Smart, scalable, and tailored for the African workforce — proudly built with <span class="text-green-600 font-semibold">Kenyan precision 🇰🇪</span>.
   </p>
 
@@ -844,44 +846,44 @@
   <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000    grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
     <!-- Card 1 -->
     <div class="reveal-text opacity-0 translate-y-8 transition-all duration-1000     rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-      <h4 class="text-xl font-semibold text-black mb-2">24/7 Customer Support</h4>
-      <p class="text-gray-700">Global agents trained and ready — no need for a full in-house team.</p>
+      <h4 class="text-xl font-semibold  dark:text-green-600 mb-2">24/7 Customer Support</h4>
+      <p class="text-gray-700 dark:text-white">Global agents trained and ready — no need for a full in-house team.</p>
     </div>
 
     <!-- Card 2 -->
     <div class="reveal-text opacity-0 translate-y-8 transition-all duration-1000     rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
       <h4 class="text-xl font-semibold text-red-600 mb-2">AI Chatbot Integration</h4>
-      <p class="text-gray-700">Free up your human team with smart, multilingual AI that scales.</p>
+      <p class="text-gray-700 dark:text-white">Free up your human team with smart, multilingual AI that scales.</p>
     </div>
 
     <!-- Card 3 -->
     <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000   rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
       <h4 class="text-xl font-semibold text-green-600 mb-2">Remote Onboarding</h4>
-      <p class="text-gray-700">We onboard and train so you don’t have to — fast and frictionless.</p>
+      <p class="text-gray-700 dark:text-white">We onboard and train so you don’t have to — fast and frictionless.</p>
     </div>
 
     <!-- Card 4 -->
     <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000     rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-      <h4 class="text-xl font-semibold text-black mb-2">Local Language Talent</h4>
-      <p class="text-gray-700">Speak your customer’s language — literally. We’ve got the reach.</p>
+      <h4 class="text-xl font-semibold text-black dark:text-green-600 mb-2">Local Language Talent</h4>
+      <p class="text-gray-700 dark:text-white">Speak your customer’s language — literally. We’ve got the reach.</p>
     </div>
 
     <!-- Card 5 -->
     <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000    rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
       <h4 class="text-xl font-semibold text-red-600 mb-2">Cost-Effective Scaling</h4>
-      <p class="text-gray-700">Grow smart. We keep the budget low and performance high.</p>
+      <p class="text-gray-700 dark:text-white">Grow smart. We keep the budget low and performance high.</p>
     </div>
 
     <!-- Card 6 -->
     <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000    rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
       <h4 class="text-xl font-semibold text-green-600 mb-2">Admin & Data Entry</h4>
-      <p class="text-gray-700">Tedious tasks? We’ve got virtual teams that handle it all, fast.</p>
+      <p class="text-gray-700 dark:text-white">Tedious tasks? We’ve got virtual teams that handle it all, fast.</p>
     </div>
   </div>
 
 </section>
 
-<section class="bg-white py-16 px-6 md:px-20">
+<section class="dark:text-white py-16 px-6 md:px-20">
   <div class="max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center md:items-start gap-8">
     <!-- CEO Photo -->
     <div class="relative h-36 w-36">
@@ -907,19 +909,19 @@
     
     <!-- Message -->
     <div class="flex-1">
-      <h2 class="text-2xl font-bold text-gray-800 mb-4">A Message from Our CEO</h2>
-      <p class="text-gray-600 mb-6">
+      <h2 class="text-2xl font-bold dark:text-white text-gray-800 mb-4">A Message from Our CEO</h2>
+      <p class="  dark:text-white text-gray-600 mb-6">
         At <strong>New Frontier BPO</strong>, we’re on a mission to showcase Kenya’s incredible talent
         and deliver unparalleled BPO solutions to clients around the globe. Our dedication to
         excellence, integrity, and innovation drives every interaction—both with our partners
         overseas and the communities we uplift here at home.
       </p>
-      <p class="text-gray-600 italic">
+      <p class="dark:text-white text-gray-600 italic">
         “Thank you for trusting us to be your outsourcing partner. Together, we’ll redefine what
         it means to work with Kenya.”
       </p>
-      <p class="mt-4 font-semibold text-gray-800">Tracy Scheffler</p>
-      <p class="text-gray-500 text-sm">CEO &amp; Co‑Founder</p>
+      <p class="mt-4 font-semibold dark:text-white text-gray-800">Tracy Scheffler</p>
+      <p class=" dark:text-white text-gray-500 text-sm">CEO &amp; Co‑Founder</p>
     </div>
   </div>
 </section>
@@ -930,7 +932,7 @@ id="BREATHE"
 class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
 >
 <h1
-  class="text-center font-bold text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
+  class="text-center font-bold dark:text-white text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
 >
   TESTIMONIALS
 </h1>
@@ -942,10 +944,10 @@ TESTIMONIALS
 </section>
 <section class="mb-20 px-4">
   <div id="testimonialBox" class="w-full max-w-4xl mx-auto p-12 rounded-2xl  text-center transition-all duration-500 bg-white text-black">
-    <p id="testimonialText" class="text-xl italic mb-4">
+    <p id="testimonialText"  class=" text-xl italic mb-4">
       "This platform has truly changed my life. Highly recommend to everyone!"
     </p>
-    <h3 id="testimonialName" class="text-lg font-bold">- John Doe</h3>
+    <h3 id="testimonialName" class="text-lg    font-bold">- John Doe</h3>
 
     <!-- Avatar Circles -->
     <div class="flex justify-center gap-6 mt-10">
@@ -959,7 +961,7 @@ TESTIMONIALS
 </section>
 
 <section>
-  <section class="py-16 bg-white text-black text-center">
+  <section class="py-16 dark:text-white text-black text-center">
     <div class="text2 space-y-6">
       <h5 id="autoBlur" class="text-7xl font-bold">Let's work together.</h5>
       <h5 id="autoBlur" class="text-5xl">Get in touch.</h5>
@@ -983,41 +985,41 @@ TESTIMONIALS
 
  
 </section>
-<footer class="bg-black text-gray-200 py-12 mt-20">
+<footer class=" dark:bg-[--color-bg]  text-black border-t-red-600  py-12 mt-20">
   <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
 
     <!-- Logo & About -->
     <div>
       <img src="./nftbpo-high-resolution-logo-transparent (1).png" alt="Company Logo" class="w-32 mb-4">
-      <p class="text-sm">
+      <p class="text-sm  text-black  dark:text-white">
         Empowering businesses through efficient, scalable, and innovative outsourcing solutions. Your success is our priority.
       </p>
     </div>
 
     <!-- Navigation -->
     <div>
-      <h3 class="text-lg font-semibold mb-4">Links</h3>
+      <h3 class="text-lg font-semibold text-black dark:text-white mb-4">Links</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition">WhyUS</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition">AboutUs</a></li>
-        <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+        <li><a href="#" class=" text-black dark:text-white hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#" class=" text-black dark:text-white hover:text-blue-400 transition">WhyUS</a></li>
+        <li><a href="#" class="  text-black dark:text-white hover:text-blue-400 transition">AboutUs</a></li>
+        <li><a href="#" class="  text-black dark:text-white hover:text-blue-400 transition">Contact</a></li>
       </ul>
     </div>
 
     <!-- Newsletter -->
     <div>
-      <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
-      <p class="text-sm mb-4">Sign up to stay updated on our latest services and offers.</p>
+      <h3 class="text-lg font-semibold text-black dark:text-white mb-4">Newsletter</h3>
+      <p class="text-sm mb-4 text-black dark:text-white ">Sign up to stay updated on our latest services and offers.</p>
       <form class="flex flex-row space-x-4 items-center">
         <input 
           type="email" 
           placeholder="Enter your email" 
-          class="px-4 py-2 rounded bg-gray-800 border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 w-64"
+          class="px-4 py-2  text-black rounded bg-gray-800 border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 w-64"
         />
         <button 
           type="submit" 
-          class="bg-red-600 hover:bg-green-700 transition px-4 py-2 rounded text-white text-sm"
+          class="bg-red-600 text-black dark:text-white  hover:bg-green-700 transition px-4 py-2 rounded  text-sm"
         >
           Subscribe
         </button>
@@ -1027,14 +1029,14 @@ TESTIMONIALS
 
     <!-- Contact -->
     <div>
-      <h3 class="text-lg font-semibold mb-4">Contact</h3>
-      <p class="text-sm">Email: <a href="mailto:nftbpo@gmail.com" class="text-red-400 hover:underline">nftbpo@gmail.com</a></p>
-      <p class="text-sm">Phone: +254 712 345 678</p>
+      <h3 class="text-lg font-semibold dark:text-white mb-4">Contact</h3>
+      <p class="text-sm  text-black  dark:text-white">Email: <a href="mailto:nftbpo@gmail.com" class="text-red-400 hover:underline">nftbpo@gmail.com</a></p>
+      <p class="text-sm text-black dark:text-white ">Phone: +254 712 345 678</p>
     </div>
 
     <!-- Socials -->
     <div>
-      <h3 class="text-lg font-semibold mb-4">Follow US</h3>
+      <h3 class="text-lg font-semibold  text-black dark:text-white mb-4">Follow US</h3>
       <div class="flex space-x-4 text-xl">
         <a href="#" class="hover:text-red-400 transition"><i class='bx bxl-github'></i></a>
         <a href="#" class="hover:text-green-400 transition"><i class='bx bxl-twitter'></i></a>
@@ -1046,7 +1048,7 @@ TESTIMONIALS
   </div>
 
   <!-- Bottom -->
-  <div class="mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
+  <div class=" mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
     © 2025 Your Company. All rights reserved.
   </div>
 </footer>
@@ -1351,24 +1353,31 @@ document.addEventListener('mousemove', (e) => {
     name.textContent = testimonials[index].name;
   }
 //  moon sun 
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const toggleIcon = document.getElementById("theme-toggle");
 
-  function toggleDarkMode() {
-    const html = document.documentElement;
-    const toggleIcon = document.getElementById("darkModeToggle").querySelector("i");
+  html.classList.toggle("dark");
+  localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
 
-    html.classList.toggle("dark");
-
-    if (html.classList.contains("dark")) {
-      toggleIcon.classList.remove("bx-sun");
-      toggleIcon.classList.add("bx-moon");
-    } else {
-      toggleIcon.classList.remove("bx-moon");
-      toggleIcon.classList.add("bx-sun");
-    }
+  if (html.classList.contains("dark")) {
+    toggleIcon.classList.remove("bx-sun");
+    toggleIcon.classList.add("bx-moon");
+  } else {
+    toggleIcon.classList.remove("bx-moon");
+    toggleIcon.classList.add("bx-sun");
   }
+}
 
+// Attach event listener to the <li>
+document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
 
-
+// Load saved theme on page load
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+  document.getElementById("theme-toggle").classList.remove("bx-sun");
+  document.getElementById("theme-toggle").classList.add("bx-moon");
+}
   const elements = document.querySelectorAll('.autoShow');
 
 const observerrrr = new IntersectionObserver(entries => {
@@ -1517,7 +1526,6 @@ function sendMessage(event) {
 
   input.value = "";
 }
-
 
     </script>
   </body>
