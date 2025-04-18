@@ -139,62 +139,48 @@
 
     <!-- Chatbot Modal -->
    <!-- Chatbot Modal (Bottom Right Corner) -->
-<div
-id="chatbotModal"
-class="fixed bottom-24 right-4 bg-white w-[350px] h-[400px] rounded-lg shadow-lg overflow-hidden flex flex-col z-50 hidden border"
->
-<!-- Backdrop Overlay -->
+<!-- Backdrop (clicking this should close the modal) -->
 <div 
   id="chatbotBackdrop"
-  class="fixed inset-0 bg-opacity-40 z-40 hidden"
+  class="fixed inset-0  bg-opacity-40 z-40 hidden"
   onclick="toggleChatbotModal()"
 ></div>
 
-
-<!-- Header -->
-<div class="bg-red-600 text-white px-4 py-3 flex items-center gap-3">
-  <!-- Logo -->
-  <img 
-  src="./nftbpo-high-resolution-logo-transparent (1).png" 
-  alt="NFT BPO Logo" 
-  class="h-8 object-contain" 
-/>
-
-
-  <!-- Text -->
-  <div class="flex flex-col">
-    <p class="text-sm font-semibold">Available to Chat</p>
-    <p class="text-[10px] text-white/80">Customer Support</p>
+<!-- Chatbot Modal (separate from the backdrop) -->
+<div
+  id="chatbotModal"
+  class="fixed bottom-24 right-4 bg-white w-[350px] h-[400px] rounded-lg shadow-lg overflow-hidden flex flex-col z-50 hidden border"
+>
+  <!-- Header -->
+  <div class="bg-red-600 text-white px-4 py-3 flex justify-between items-center">
+    <img src="./nftbpo-high-resolution-logo-transparent (1).png" class="w-20 h-auto" alt="NFTBPO Logo">
+    <p class="text-xs">Available to chat</p>
+    <button onclick="toggleChatbotModal()" class="text-xl font-bold">&times;</button>
   </div>
 
-  <!-- Close Button -->
-  <button onclick="toggleChatbotModal()" class="ml-auto text-xl font-bold text-white">&times;</button>
-</div>
-
-
-<!-- Chat Area -->
-<div id="chatArea" class="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
-  <div class="bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm">
-    Hi! How can I assist you today?
+  <!-- Chat Area -->
+  <div id="chatArea" class="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
+    <div class="bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm">
+      Hi! How can I assist you today?
+    </div>
   </div>
-</div>
 
-<!-- Input Area -->
-<form onsubmit="sendMessage(event)" class="flex items-center border-t border-gray-300 p-2">
-  <input
-    id="chatInput"
-    type="text"
-    placeholder="Type a message..."
-    class="flex-1 px-3 py-2 rounded border border-gray-300 focus:outline-none text-sm"
-    required
-  />
-  <button
-    type="submit"
-    class="ml-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-green-600"
-  >
-    Send
-  </button>
-</form>
+  <!-- Input Area -->
+  <form onsubmit="sendMessage(event)" class="flex items-center border-t border-gray-300 p-2">
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Type a message..."
+      class="flex-1 px-3 py-2 rounded border border-gray-300 focus:outline-none text-sm"
+      required
+    />
+    <button
+      type="submit"
+      class="ml-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-green-600"
+    >
+      Send
+    </button>
+  </form>
 </div>
 
 
