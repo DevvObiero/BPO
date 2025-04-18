@@ -20,7 +20,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
 
-    <body>
+    <body  class="dark:bg-[--color-bg-dark]">
         <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
             <nav
               class=" z-10 max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
@@ -28,7 +28,7 @@
               <!-- Logo -->
               <div class="flex items-center space-x-2">
                 <img
-                href="#HOME"
+                href="index.html#HOME"
                   src="./nftbpo-high-resolution-logo-transparent.png"
                   alt="Logo"
                   class="w-auto h-9 hover:cursor-pointer"
@@ -38,7 +38,7 @@
       
               <!-- Burger Menu for Small Screens -->
               <div class="lg:hidden flex items-center">
-                <button id="burger-menu-btn" class="text-black"></button>
+                <button id="burger-menu-btn" class=" text-black"></button>
               </div>
              
                         
@@ -49,15 +49,17 @@
               >
               <!-- Dark Mode Toggle with Boxicons -->
       <li>
+        
       
-        <li class="cursor-pointer text-2xl text-yellow-500 dark:text-black transition duration-300" onclick="toggleDarkMode()" id="darkModeToggle">
-          <i class='bx bx-sun'></i>
+      
+        <li class="cursor-pointer text-2xl text-yellow-500 dark:text-white transition duration-300" id="darkModeToggle">
+          <i id="theme-toggle" class="bx bx-sun"></i>
         </li>
         
                   <a
-                    href="index.html"
+                    href="index.html#HOME"
                     id="HOME"
-                    class="transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
+                    class="dark:text-white  transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
                   >
                     HOME
                   </a>
@@ -66,52 +68,62 @@
                 <li>
                   <a
                     href="index.html#ABOUT"
-                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    class="border-b-2 border-transparent dark:text-white  hover:border-green-400 hover:text-red-500 transition duration-300"
                     >ABOUT</a
                   >
                 </li>
                 <li>
                   <a
                     href="index.html#SERVICES"
-                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
                     >SERVICES</a
                   >
                 </li>
                 <li>
                   <a
                     href="index.html#WHY"
-                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
                     >WHY US</a
                   >
                 </li>
                 <li>
                   <a
                     href="blog.html"
-                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
                     >BLOG</a
                   >
                 </li>
                 <li>
                   <a
                     href="career.html"
-                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
                     >CAREERS</a
                   >
                 </li>
                 <li>
                   <a
-                    href="index.html#CONTACT"
-                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    href="#CONTACT"
+                    class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
                     >CONTACT US</a
                   >
                 </li>
       
-             
+                <!-- Login Button -->
+                <li>
+      
+                  <li>
+                    <a
+                      href="./log.html"
+                      class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md hover:bg-green-600 transition duration-300"
+                    >
+                      LOGIN
+                    </a>
+                  </li>
                   
+                </li>
               </ul>
             </nav>
           </header>
-
 <section id="blog">
     <div class="blog-box">
         <div class="blog-img">
@@ -230,7 +242,33 @@
     </div>
   </footer>
   
-        <script src="script.js"></script>
+        <script>
+            function toggleDarkMode() {
+  const html = document.documentElement;
+  const toggleIcon = document.getElementById("theme-toggle");
+
+  html.classList.toggle("dark");
+  localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+
+  if (html.classList.contains("dark")) {
+    toggleIcon.classList.remove("bx-sun");
+    toggleIcon.classList.add("bx-moon");
+  } else {
+    toggleIcon.classList.remove("bx-moon");
+    toggleIcon.classList.add("bx-sun");
+  }
+}
+
+// Attach event listener to the <li>
+document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+
+// Load saved theme on page load
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+  document.getElementById("theme-toggle").classList.remove("bx-sun");
+  document.getElementById("theme-toggle").classList.add("bx-moon");
+}
+        </script>
     </body>
 
 </html>
