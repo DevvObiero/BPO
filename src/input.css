@@ -629,16 +629,16 @@ a#autoBlur {
 
 #blog .blog-details a::after {
   content: "";
-  width: 50px;
+  width: 60px;
   height: 1px;
-  background-color: #deb286;
+  background-color: tomato;
   position: absolute;
   top: 4px;
   right: -60px;
 }
 
 #blog .blog-details a:hover {
-  color: #deb286;
+  color: tomato;
   transition: 0.3s;
 }
 
@@ -652,7 +652,7 @@ a#autoBlur {
   left: 0;
   font-size: 57px;
   font-weight: 700;
-  color: #deb286;
+  color: tomato;
   z-index: -9;
 }
 
@@ -679,5 +679,5 @@ a#autoBlur {
 }
 
 #page-header2 p {
-  color: #e0c46e;
+  color: tomato;
 }
