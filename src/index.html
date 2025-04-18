@@ -124,20 +124,79 @@
     </header>
     <!-- Floating Chatbot Modal -->
     <!-- Small Floating Chatbot -->
-    <div class="fixed bottom-4 right-4 z-50 flex flex-col items-center">
-      <!-- Chatbot Video -->
-      <video
-        src="./Animation - 1744659271538.webm"
-        autoplay
-        loop
-        muted
-        playsinline
-        class="w-20 h-20"
-      ></video>
+  <!-- Chatbot Icon -->
+<div onclick="toggleChatbotModal()" class="fixed bottom-4 right-4 z-50 flex flex-col items-center cursor-pointer">
+  <video
+    src="./Animation - 1744659271538.webm"
+    autoplay
+    loop
+    muted
+    playsinline
+    class="w-20 h-20"
+  ></video>
+  <p class="text-[10px] mt-1 text-black">How can I help you today?</p>
+</div>
 
-      <!-- Subtext -->
-      <p class="text-[10px] mt-1 text-black">How can I help you today?</p>
-    </div>
+    <!-- Chatbot Modal -->
+   <!-- Chatbot Modal (Bottom Right Corner) -->
+<div
+id="chatbotModal"
+class="fixed bottom-24 right-4 bg-white w-[350px] h-[400px] rounded-lg shadow-lg overflow-hidden flex flex-col z-50 hidden border"
+>
+<!-- Backdrop Overlay -->
+<div 
+  id="chatbotBackdrop"
+  class="fixed inset-0 bg-opacity-40 z-40 hidden"
+  onclick="toggleChatbotModal()"
+></div>
+
+
+<!-- Header -->
+<div class="bg-red-600 text-white px-4 py-3 flex items-center gap-3">
+  <!-- Logo -->
+  <img 
+  src="./nftbpo-high-resolution-logo-transparent (1).png" 
+  alt="NFT BPO Logo" 
+  class="h-8 object-contain" 
+/>
+
+
+  <!-- Text -->
+  <div class="flex flex-col">
+    <p class="text-sm font-semibold">Available to Chat</p>
+    <p class="text-[10px] text-white/80">Customer Support</p>
+  </div>
+
+  <!-- Close Button -->
+  <button onclick="toggleChatbotModal()" class="ml-auto text-xl font-bold text-white">&times;</button>
+</div>
+
+
+<!-- Chat Area -->
+<div id="chatArea" class="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
+  <div class="bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm">
+    Hi! How can I assist you today?
+  </div>
+</div>
+
+<!-- Input Area -->
+<form onsubmit="sendMessage(event)" class="flex items-center border-t border-gray-300 p-2">
+  <input
+    id="chatInput"
+    type="text"
+    placeholder="Type a message..."
+    class="flex-1 px-3 py-2 rounded border border-gray-300 focus:outline-none text-sm"
+    required
+  />
+  <button
+    type="submit"
+    class="ml-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-green-600"
+  >
+    Send
+  </button>
+</form>
+</div>
+
 
     <section
       class=" main-content min-h-screen p-100 flex items-center justify-center relative overflow-hidden"
@@ -1421,6 +1480,57 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// chatbot 
+function toggleChatbotModal() {
+  const modal = document.getElementById('chatbotModal');
+  const backdrop = document.getElementById('chatbotBackdrop');
+  const isHidden = modal.classList.contains('hidden');
+
+  if (isHidden) {
+    modal.classList.remove('hidden');
+    backdrop.classList.remove('hidden');
+  } else {
+    modal.classList.add('hidden');
+    backdrop.classList.add('hidden');
+  }
+}
+
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    const modal = document.getElementById('chatbotModal');
+    const backdrop = document.getElementById('chatbotBackdrop');
+    modal.classList.add('hidden');
+    backdrop.classList.add('hidden');
+  }
+});
+function sendMessage(event) {
+  event.preventDefault();
+  const input = document.getElementById("chatInput");
+  const chatArea = document.getElementById("chatArea");
+
+  const userMsg = document.createElement("div");
+  userMsg.textContent = input.value;
+  userMsg.className =
+    "bg-blue-100 p-2 rounded self-end w-fit max-w-[80%] text-sm ml-auto";
+  chatArea.appendChild(userMsg);
+
+  // Scroll to bottom
+  chatArea.scrollTop = chatArea.scrollHeight;
+
+  // Send input.value to chatbot (your friend can hook this to backend/API)
+  // Simulated response:
+  setTimeout(() => {
+    const botMsg = document.createElement("div");
+    botMsg.textContent = "I'm a placeholder chatbot response.";
+    botMsg.className =
+      "bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm";
+    chatArea.appendChild(botMsg);
+    chatArea.scrollTop = chatArea.scrollHeight;
+  }, 1000);
+
+  input.value = "";
+}
 
 
     </script>
