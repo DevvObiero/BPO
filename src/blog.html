@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- ScrollTrigger Plugin (for scroll animations) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+
+    <body>
+        <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
+            <nav
+              class=" z-10 max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+            >
+              <!-- Logo -->
+              <div class="flex items-center space-x-2">
+                <img
+                href="#HOME"
+                  src="./nftbpo-high-resolution-logo-transparent.png"
+                  alt="Logo"
+                  class="w-auto h-9 hover:cursor-pointer"
+                />
+                <!-- <span class="text-xl font-bold text-black">BPO</span> -->
+              </div>
+      
+              <!-- Burger Menu for Small Screens -->
+              <div class="lg:hidden flex items-center">
+                <button id="burger-menu-btn" class="text-black"></button>
+              </div>
+             
+                        
+              <!-- Menu -->
+              <ul
+                id="menu"
+                class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
+              >
+              <!-- Dark Mode Toggle with Boxicons -->
+      <li>
+      
+        <li class="cursor-pointer text-2xl text-yellow-500 dark:text-black transition duration-300" onclick="toggleDarkMode()" id="darkModeToggle">
+          <i class='bx bx-sun'></i>
+        </li>
+        
+                  <a
+                    href="index.html"
+                    id="HOME"
+                    class="transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
+                  >
+                    HOME
+                  </a>
+                </li>
+      
+                <li>
+                  <a
+                    href="index.html#ABOUT"
+                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    >ABOUT</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index.html#SERVICES"
+                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    >SERVICES</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index.html#WHY"
+                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    >WHY US</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="blog.html"
+                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    >BLOG</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="career.html"
+                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    >CAREERS</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="index.html#CONTACT"
+                    class="border-b-2 border-transparent hover:border-green-400 hover:text-red-500 transition duration-300"
+                    >CONTACT US</a
+                  >
+                </li>
+      
+             
+                  
+              </ul>
+            </nav>
+          </header>
+
+<section id="blog">
+    <div class="blog-box">
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="blog1-image">
+        </div>
+        <div class="blog-details">
+            <h4>"The Art of Wine Tasting: A Beginner's Guide"</h4>
+           <p>Wine tasting is an art that can deepen your appreciation for each glass. In this guide, we’ll explore the basics: Look, Smell, Sip, Savor, and Evaluate </p>
+            <!-- <p>Wine tasting is an art that enhances your appreciation of wine. In this beginner's guide, we’ll introduce you to the essential steps: Look, Smell, Sip, Savor, and Evaluate. Learn how to assess the color, aromas, and flavors to fully enjoy each glass. Ready to dive deeper into the world of wine tasting? </p> -->
+        <a href="#">CONTINUE READING</a>
+        </div>
+        <h1>13/01</h1>
+    </div>
+    <div class="blog-box">
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1691017296278-ff9b1b11a8cd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="blog1-image">
+        </div>
+        <div class="blog-details">
+            <h4>"How to Pair Spirits with Food: From Whiskey to Tequila"</h4>
+           <p>Pairing spirits with food can elevate your dining experience. Find out which spirits complement different dishes, from rich whiskeys with smoked meats to tequila with spicy foods </p>
+            <!-- <p>Wine tasting is an art that enhances your appreciation of wine. In this beginner's guide, we’ll introduce you to the essential steps: Look, Smell, Sip, Savor, and Evaluate. Learn how to assess the color, aromas, and flavors to fully enjoy each glass. Ready to dive deeper into the world of wine tasting? </p> -->
+        <a href="#">CONTINUE READING</a>
+        </div>
+        <h1>13/01</h1>
+    </div>
+    <div class="blog-box">
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1669804803304-e476993ec594?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="blog1-image">
+        </div>
+        <div class="blog-details">
+            <h4>"The Ultimate Guide to Aging Spirits: From Whiskey to Rum"</h4>
+           <p>Aging gives spirits their unique depth. Learn what happens to whiskey, rum, and other spirits as they age and how barrel selection impacts flavor. </p>
+            <!-- <p>Wine tasting is an art that enhances your appreciation of wine. In this beginner's guide, we’ll introduce you to the essential steps: Look, Smell, Sip, Savor, and Evaluate. Learn how to assess the color, aromas, and flavors to fully enjoy each glass. Ready to dive deeper into the world of wine tasting? </p> -->
+        <a href="#">CONTINUE READING</a>
+        </div>
+        <h1>13/01</h1>
+    </div>
+    <div class="blog-box">
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1446822775955-c34f483b410b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="blog1-image">
+        </div>
+        <div class="blog-details">
+            <h4>"Food Pairing 101: Finding the Perfect Wine for Every Dish"</h4>
+           <p>A well-paired wine can transform a meal. This guide walks you through pairing basics, helping you choose wines that enhance flavors, from light whites with seafood to bold reds with grilled steaks </p>
+            <!-- <p>Wine tasting is an art that enhances your appreciation of wine. In this beginner's guide, we’ll introduce you to the essential steps: Look, Smell, Sip, Savor, and Evaluate. Learn how to assess the color, aromas, and flavors to fully enjoy each glass. Ready to dive deeper into the world of wine tasting? </p> -->
+        <a href="#">CONTINUE READING</a>
+        </div>
+        <h1>13/01</h1>
+    </div>
+</section>
+<footer class="bg-black text-gray-200 py-12 mt-20">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+  
+      <!-- Logo & About -->
+      <div>
+        <img src="./nftbpo-high-resolution-logo-transparent (1).png" alt="Company Logo" class="w-32 mb-4">
+        <p class="text-sm">
+          Empowering businesses through efficient, scalable, and innovative outsourcing solutions. Your success is our priority.
+        </p>
+      </div>
+  
+      <!-- Navigation -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition">WhyUS</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition">AboutUs</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+        <p class="text-sm mb-4">Sign up to stay updated on our latest services and offers.</p>
+        <form class="flex flex-row space-x-4 items-center">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            class="px-4 py-2 rounded bg-gray-800 border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 w-64"
+          />
+          <button 
+            type="submit" 
+            class="bg-red-600 hover:bg-green-700 transition px-4 py-2 rounded text-white text-sm"
+          >
+            Subscribe
+          </button>
+        </form>
+        
+      </div>
+  
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+        <p class="text-sm">Email: <a href="mailto:nftbpo@gmail.com" class="text-red-400 hover:underline">nftbpo@gmail.com</a></p>
+        <p class="text-sm">Phone: +254 712 345 678</p>
+      </div>
+  
+      <!-- Socials -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Follow US</h3>
+        <div class="flex space-x-4 text-xl">
+          <a href="#" class="hover:text-red-400 transition"><i class='bx bxl-github'></i></a>
+          <a href="#" class="hover:text-green-400 transition"><i class='bx bxl-twitter'></i></a>
+          <a href="#" class="hover:text-white transition"><i class='bx bxl-linkedin'></i></a>
+          <a href="#" class="hover:text-green-400 transition"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Bottom -->
+    <div class="mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
+      © 2025 Your Company. All rights reserved.
+    </div>
+  </footer>
+  
+        <script src="script.js"></script>
+    </body>
+
+</html>
+
+
+
