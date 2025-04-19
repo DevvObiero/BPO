@@ -709,4 +709,7 @@ a#autoBlur {
   .raise {
     top: 292px; /* Adjust the value as needed */
   }
+  .raisee {
+    top: -202px; /* Adjust the value as needed */
+  }
 }
