@@ -696,6 +696,7 @@ a#autoBlur {
   background-color: #1e293b; /* dark gray-blue */
   color: tomato; /* yellow-400 */
 }
+
 @media (max-width: 1024px) and (min-width: 640px) {
   .rotating-image {
     height: 375px !important; /* Half the original height */
@@ -707,16 +708,5 @@ a#autoBlur {
   }
   .raise {
     top: 292px; /* Adjust the value as needed */
-  }
-
-  .raise-up {
-    top: -300px; /* Adjust the value as needed */
-  }
-  .cards-container img {
-    width: 6rem !important; /* 24px smaller than w-40 (10rem) */
-  }
-
-  .rotating-img {
-    top: -210px;
   }
 }

@@ -411,9 +411,6 @@ html, body {
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
-  .mb-100 {
-    margin-bottom: calc(var(--spacing) * 100);
-  }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
@@ -1063,13 +1060,6 @@ html, body {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
-  .group-hover\:block {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        display: block;
-      }
-    }
-  }
   .hover\:-translate-y-2 {
     &:hover {
       @media (hover: hover) {
@@ -1219,21 +1209,6 @@ html, body {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  .md\:block {
-    @media (width >= 48rem) {
-      display: block;
-    }
-  }
-  .md\:hidden {
-    @media (width >= 48rem) {
-      display: none;
-    }
-  }
-  .md\:w-24 {
-    @media (width >= 48rem) {
-      width: calc(var(--spacing) * 24);
-    }
-  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1325,11 +1300,6 @@ html, body {
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
-    }
-  }
-  .lg\:w-40 {
-    @media (width >= 64rem) {
-      width: calc(var(--spacing) * 40);
     }
   }
   .lg\:w-full {
@@ -1952,15 +1922,6 @@ a#autoBlur {
   }
   .raise {
     top: 292px;
-  }
-  .raise-up {
-    top: -300px;
-  }
-  .cards-container img {
-    width: 6rem !important;
-  }
-  .rotating-img {
-    top: -210px;
   }
 }
 @property --tw-translate-x {
