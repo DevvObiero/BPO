@@ -709,4 +709,17 @@ a#autoBlur {
   .raise {
     top: 292px; /* Adjust the value as needed */
   }
+  .remove {
+    display: none;
+  }
+  .raise-up {
+    top: -300px; /* Adjust the value as needed */
+  }
+  .cards-container img {
+    width: 6rem !important; /* 24px smaller than w-40 (10rem) */
+  }
+
+  .rotating-img {
+    top: -210px;
+  }
 }
