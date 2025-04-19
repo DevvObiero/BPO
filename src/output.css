@@ -411,6 +411,9 @@ html, body {
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
+  .mb-100 {
+    margin-bottom: calc(var(--spacing) * 100);
+  }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
@@ -1949,9 +1952,6 @@ a#autoBlur {
   }
   .raise {
     top: 292px;
-  }
-  .remove {
-    display: none;
   }
   .raise-up {
     top: -300px;
