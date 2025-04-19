@@ -699,7 +699,14 @@ a#autoBlur {
 
 @media (max-width: 1024px) and (min-width: 640px) {
   .rotating-image {
-    height: 315px !important; /* Half the original height */
+    height: 375px !important; /* Half the original height */
     left: -10rem; /* Optional: adjust position if needed */
+  }
+  .tablet-raise {
+    top: 3rem !important; /* Adjust the value as needed */
+    position: absolute !important;
+  }
+  .raise {
+    top: 292px; /* Adjust the value as needed */
   }
 }

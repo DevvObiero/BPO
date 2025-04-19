@@ -255,6 +255,9 @@ html, body {
   .top-24 {
     top: calc(var(--spacing) * 24);
   }
+  .top-72 {
+    top: calc(var(--spacing) * 72);
+  }
   .top-96 {
     top: calc(var(--spacing) * 96);
   }
@@ -1910,8 +1913,15 @@ a#autoBlur {
 }
 @media (max-width: 1024px) and (min-width: 640px) {
   .rotating-image {
-    height: 315px !important;
+    height: 375px !important;
     left: -10rem;
+  }
+  .tablet-raise {
+    top: 3rem !important;
+    position: absolute !important;
+  }
+  .raise {
+    top: 292px;
   }
 }
 @property --tw-translate-x {
