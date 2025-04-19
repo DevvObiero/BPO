@@ -696,3 +696,10 @@ a#autoBlur {
   background-color: #1e293b; /* dark gray-blue */
   color: tomato; /* yellow-400 */
 }
+
+@media (max-width: 1024px) and (min-width: 640px) {
+  .rotating-image {
+    height: 315px !important; /* Half the original height */
+    left: -10rem; /* Optional: adjust position if needed */
+  }
+}

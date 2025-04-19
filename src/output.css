@@ -38,7 +38,6 @@ html, body {
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
-    --color-gray-950: oklch(13% 0.028 261.692);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -75,7 +74,6 @@ html, body {
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
-    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-md: 12px;
     --blur-lg: 16px;
@@ -1909,6 +1907,12 @@ a#autoBlur {
 ::selection {
   background-color: #1e293b;
   color: tomato;
+}
+@media (max-width: 1024px) and (min-width: 640px) {
+  .rotating-image {
+    height: 315px !important;
+    left: -10rem;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
