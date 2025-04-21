@@ -720,6 +720,7 @@ a#autoBlur {
   background-position: center;
   color: white; /* optional: makes text visible */
   border: none;
+  cursor: pointer;
 }
 
 .btn-kenyan-flag {
