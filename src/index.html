@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2V4QGLK8W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W2V4QGLK8W');
+</script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- ScrollTrigger Plugin (for scroll animations) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+
+  <body class="dark:bg-[--color-bg-dark]">
+  
+    <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
+      <nav
+        class=" z-10 max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img
+          href="#HOME"
+            src="./nftbpo-high-resolution-logo-transparent.png"
+            alt="Logo"
+            class="w-auto h-9 hover:cursor-pointer"
+          />
+          <!-- <span class="text-xl font-bold text-black">BPO</span> -->
+        </div>
+
+        <!-- Burger Menu for Small Screens -->
+        <div class="lg:hidden flex items-center">
+          <button id="burger-menu-btn" class=" text-black"></button>
+        </div>
+       
+                  
+        <!-- Menu -->
+        <ul
+          id="menu"
+          class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
+        >
+        <!-- Dark Mode Toggle with Boxicons -->
+<li>
+  
+
+
+  <li class="cursor-pointer text-2xl text-yellow-500 dark:text-white transition duration-300" id="darkModeToggle">
+    <i id="theme-toggle" class="bx bx-sun"></i>
+  </li>
+  
+            <a
+              href="#HOME"
+              id="HOME"
+              class="dark:text-white  transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
+            >
+              HOME
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#ABOUT"
+              class="border-b-2 border-transparent dark:text-white  hover:border-green-400 hover:text-red-500 transition duration-300"
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a
+              href="#SERVICES"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+              >SERVICES</a
+            >
+          </li>
+          <li>
+            <a
+              href="#WHY"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+              >WHY US</a
+            >
+          </li>
+          <li>
+            <a
+              href="blog.html"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+              >BLOG</a
+            >
+          </li>
+          <li>
+            <a
+              href="career.html"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+              >CAREERS</a
+            >
+          </li>
+          <li>
+            <a
+              href="#CONTACT-US"
+              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+              >CONTACT US</a
+            >
+          </li>
+
+          <!-- Login Button -->
+          <li>
+
+            <li>
+              <a
+                href="./log.html"
+                class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md btn-kitenge-hover hover:text-black transition duration-300"
+              >
+                LOGIN
+              </a>
+            </li>
+            
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Floating Chatbot Modal -->
+    <!-- Small Floating Chatbot -->
+  <!-- Chatbot Icon -->
+<div onclick="toggleChatbotModal()" class="fixed bottom-4 right-4 z-50 flex flex-col items-center cursor-pointer">
+  <video
+    src="./Animation - 1744659271538.webm"
+    autoplay
+    loop
+    muted
+    playsinline
+    class="w-20 h-20"
+  ></video>
+  <p class="text-[10px] mt-1 dark:text-black text-black">How can I help you today?</p>
+</div>
+
+    <!-- Chatbot Modal -->
+   <!-- Chatbot Modal (Bottom Right Corner) -->
+<!-- Backdrop (clicking this should close the modal) -->
+<div 
+  id="chatbotBackdrop"
+  class="fixed inset-0  bg-opacity-40 z-40 hidden"
+  onclick="toggleChatbotModal()"
+></div>
+
+<!-- Chatbot Modal (separate from the backdrop) -->
+<div
+  id="chatbotModal"
+  class="fixed bottom-24 right-4 bg-white w-[350px] h-[400px] rounded-lg shadow-lg overflow-hidden flex flex-col z-50 hidden border"
+>
+  <!-- Header -->
+  <div class="bg-red-600 text-white px-4 py-3 flex justify-between items-center">
+    <img src="./nftbpo-high-resolution-logo-transparent (1).png" class="w-20 h-auto" alt="NFTBPO Logo">
+    <p class="text-xs">Available to chat</p>
+    <button onclick="toggleChatbotModal()" class="text-xl font-bold">&times;</button>
+  </div>
+
+  <!-- Chat Area -->
+  <div id="chatArea" class="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
+    <div class="bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm">
+      Hi! How can I assist you today?
+    </div>
+  </div>
+
+  <!-- Input Area -->
+  <form onsubmit="sendMessage(event)" class="flex items-center border-t border-gray-300 p-2">
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Type a message..."
+      class="flex-1 px-3 py-2 rounded border border-gray-300 focus:outline-none text-sm"
+      required
+    />
+    <button
+      type="submit"
+      class="ml-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-green-600"
+    >
+      Send
+    </button>
+  </form>
+</div>
+
+
+    <section
+      class=" main-content min-h-screen p-100 flex items-center justify-center relative overflow-hidden"
+    >
+  
+      <!-- SVG Image Positioned on the Left -->
+      <div
+      id="rotating-image "
+      class="rotating-image absolute -left-72 top-20 h-[630px] w-auto z-0"
+    >
+      <img
+        src="./istockphoto-596811948-612x612-removebg-preview.png"
+        alt="Decorative"
+        class="h-full w-auto rotate-slow"
+      />
+    </div>
+    
+    
+      <!-- Text content -->
+      <div
+      class="dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000 absolute right-0 p-6 md:p-12 z-10 tablet-raise"
+    >
+    
+        <h1 class=" dark:text-white text-3xl md:text-6xl  font-bold mb-4 w-139">
+          EMPOWERING GLOBAL BUSINESSES
+        </h1>
+        <p class="text-lg md:text-xl dark:text-white text-black mb-6">
+          With Kenyan Talent & AI
+        </p>
+        <button
+        class="bg-red-500 btn-kitenge-hover px-6 py-3 rounded-full font-semibold transition"
+        onclick="window.location.href='log.html'"
+      >
+        Join Now
+      </button>
+        <p class=" dark:text-white text-lg md:text-xl text-black mb-6 mt-8">
+          Trusted by
+          <span id="count-up" class="text-red-500 font-bold">0</span> companies
+          across the globe
+        </p>
+      </div>
+      <div
+      id="rotating-image"
+      class="raise  absolute -right-52 top-72 h-[330px] w-auto z-0"
+    >
+      <img
+        src="./istockphoto-596811948-612x612-removebg-preview.png"
+        alt="Decorative"
+        class="h-full w-auto rotate-slow"
+      />
+    </div>
+    
+    </section>
+    
+  <div id="blocks-container">
+    <div id="blocks"></div>
+  </div>
+
+    <section
+      id="BREATHE"
+      class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
+    >
+      <h1 id="ABOUT"
+        class="text-center font-bold text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
+      >
+        ABOUT US
+      </h1>
+      <h2
+        class="text-center font-bold text-red-700 absolute top-24 left-1/2 transform -translate-x-1/2 text-[clamp(1rem,5vw,3rem)]"
+      >
+        ABOUT US
+      </h2>
+    </section>
+    <section class="py-16 px-4 md:px-20" id="statsSection">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2
+          class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000 text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+        >
+          We are global leaders in next-generation digital solutions and
+          consulting services
+        </h2>
+        <p class="text-lg dark:text-gray-50   text-gray-600 mb-12">
+          Currently operating in <strong>15 countries</strong> and creating
+          <strong>1200 high tech jobs</strong> globally.
+        </p>
+
+        <div
+          class="grid  dark:text-white grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-left"
+        >
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter"
+              data-target="1200"
+            >
+              0
+            </p>
+            <p class="text-gray-700 dark:text-white">Employees Worldwide</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="15">
+              0
+            </p>
+            <p class="text-gray-700 dark:text-white ">No of Countries</p>
+          </div>
+
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 dark:text-white counter"
+              data-target="18000000"
+            >
+              0
+            </p>
+            <p class="text-gray-700 dark:text-white">Subscribers On Our Platform</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="35">
+              0
+            </p>
+            <p class="text-gray-700 dark:text-white">Countries with Customer Footprint</p>
+          </div>
+
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter"
+              data-target="75000"
+            >
+              0
+            </p>
+            <p class="text-gray-700 ">Trained Personnel in Our Institutions</p>
+          </div>
+
+          <div>
+            <p
+              class="text-4xl font-bold text-red-600 counter dark:text-white"
+              data-target="470"
+            >
+              0
+            </p>
+            <p class="text-gray-700">Implemented Projects</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="1">
+              0
+            </p>
+            <p class="text-gray-700 dark:text-white">Microsoft Testing Center in Africa</p>
+          </div>
+
+          <div>
+            <p class="text-4xl font-bold text-red-600 counter" data-target="5">
+              0
+            </p>
+            <p class="text-gray-700 dark:text-white">Appraised at CMMI Maturity Level 5</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <h3 class="text-lg text-gray-600 mb-12 text-center dark:text-white">our clients</h3>
+
+    <!-- Logo Carousel -->
+    <div class="w-full overflow-hidden dark:bg-bg-dark   py-6">
+      <div class="animate-scroll flex gap-10 items-center w-max">
+        <!-- Repeat logos to simulate infinite loop -->
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/microsoft.svg"
+          class="h-7 w-auto"
+          alt="Microsoft"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/apple-11.svg"
+          class="h-7 w-auto"
+          alt="Apple"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/google-1-1.svg"
+          class="h-7 w-auto"
+          alt="Google"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/logo-amazon.svg"
+          class="h-7 w-auto"
+          alt="Amazon"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/meta-3.svg"
+          class="h-7 w-auto"
+          alt="Meta"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
+          class="h-7 w-auto"
+          alt="Netflix"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/intel-6.svg"
+          class="h-7 w-auto"
+          alt="Intel"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/ibm.svg"
+          class="h-7 w-auto"
+          alt="IBM"
+        />
+
+        <!-- Duplicate for looping effect -->
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/microsoft-6.svg"
+          class="h-7 w-auto"
+          alt="Microsoft"
+        />
+        <img
+          src="https://bpoak.co.ke/wp-content/uploads/2022/11/ajira-1024x268.png"
+          class="h-7 w-auto"
+          alt="Ajira"
+        />
+        <img
+          src="https://bpoak.co.ke/wp-content/uploads/2022/11/poweredby.png"
+          class="h-7 w-auto"
+          alt="Kenya Private Sectore"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/logo-amazon.svg"
+          class="h-7 w-auto"
+          alt="Amazon"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/meta-3.svg"
+          class="h-7 w-auto"
+          alt="Meta"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
+          class="h-7 w-auto"
+          alt="Netflix"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/intel-6.svg"
+          class="h-7 w-auto"
+          alt="Intel"
+        />
+        <img
+          src="https://cdn.worldvectorlogo.com/logos/ibm.svg"
+          class="h-7 w-auto"
+          alt="IBM"
+        />
+      </div>
+    </div>
+
+    <!-- Add this to your Tailwind CSS -->
+
+    <section class="relative">
+      <div class="relative mt-20 lg:mt-52">
+        <div
+          class="container flex flex-col lg:flex-row items-center justify-center gap-x-24"
+        >
+          <!-- LEFT SIDE: TEXT -->
+          <div
+            class="flex flex-1 flex-col p-10 items-center lg:items-start z-10"
+          >
+            <h1 class="  text-5xl  dark:text-white  text-blue-950">WHY KENYA?</h1>
+            <p
+              class="text-gray-500  dark:text-white my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+            >
+              “Kenya has a young, educated, entrepreneurial, and
+              English-speaking workforce. Kenya generates over 90% of its energy
+              from renewable sources, and, Kenya's largest export market is the
+              United States.”
+            </p>
+            <button
+            type="button"
+            id="toggleAccordion"
+            class="btn  btn-kitenge-hover  bg-red-600 text-white px-6 py-2 rounded-xl hover:cursor-pointer nsition duration-200"
+          >
+            More Info
+          </button>
+          
+          <div id="accordion" class=" dark:text-white w-full space-y-2 mt-6 hidden">
+            <!-- Accordion Item 1 -->
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel1">
+                <span class="font-medium">High‑quality internet</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel1" class="hidden px-4 pb-4 text-gray-600">
+                Kenya’s undersea cables and extensive 4G/5G rollout deliver reliable bandwidth.
+              </div>
+            </div>
+          
+
+            <!-- Accordion Item 2 -->
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel2">
+                <span class="font-medium">Skilled tech workforce</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel2" class="hidden px-4 pb-4 text-gray-600">
+                Kenya’s young, tech-savvy population is ready for digital tasks and innovation.
+              </div>
+            </div>
+          
+            <!-- Add more items with unique IDs -->
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel3">
+                <span class="font-medium">English Workforce</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel3" class="hidden px-4 pb-4 text-gray-600">
+                Kenya has a large availability of highly skilled, English-speaking talent who speak with a more neutral accent making its citizens suitable for call center jobs and other client-facing outsourcing duties.
+              </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel4">
+                <span class="font-medium">Digitally Skilled Workforce</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel4" class="hidden px-4 pb-4 text-gray-600">
+                Kenya's growing pool of skilled digital freelancers accredited to the Ajira Digital Program training. As of 2022, there were 1,933,011 million digital workers working either as freelancers or in BPOs
+              </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+              <button class="w-full flex justify-between items-center p-4 text-left" data-target="panel5">
+                <span class="font-medium">Affordable Labor Cost</span>
+                <span class="text-2xl">+</span>
+              </button>
+              <div id="panel5" class="hidden px-4 pb-4 text-gray-600">
+                The labor in Kenya is cheap and can potentially reduce the operational costs of global source market companie
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- RIGHT SIDE: BACKGROUND + IMAGE -->
+          <div class="relative flex flex-1 justify-center z-10 mb-10 lg:mb-0">
+            <!-- Background blob -->
+            <div
+              id="bg-svg"
+              class="hidden lg:block overflow-hidden bg-red-800 hover:bg-green-600 rounded-l-full absolute h-[22rem] w-[36rem] lg:-bottom-12 lg:-right-24 z-0"
+            ></div>
+
+            <!-- Image on top -->
+            <img
+              style="animation: floating 3s infinite ease-in-out"
+              id="fg-svg"
+              src="./cc350d306da1c5083748abb4e4522c4d-removebg-preview.png"
+              class="w-auto h-140 relative z-10"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="SERVICES" class="dark:text-white section py-100 ">
+      <h2 class="reveal-text dark:text-white opacity-0 translate-y-8 transition-all duration-1000">OUR<br />SERVICES</h2>
+      <div class="containerr">
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/d6/08/25/d608259fd52dcbeab51e18eea1af658a.jpg"
+                  alt="Customer Support"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content dark:text-white">
+            <h3>Customer Support.</h3>
+            <p class="dark:text-white">
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-lis t">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/d3/f3/cb/d3f3cb31c3e5006977eafc8c55fa5624.jpg"
+                  alt="Tonic"
+                />
+              </div>
+              <div class="icon">
+                <div class="imgBox">
+                  <video autoplay muted loop playsinline>
+                    <source
+                      src="./Animation - 1744658281064.webm"
+                      type="video/webm"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content dark:text-white">
+            <h3>AI Intergration</h3>
+            <p class="dark:text-white">
+              Supercharge your operations with intelligent automation. From
+              chatbots to data analysis, we help integrate AI solutions that
+              reduce costs, improve decision-making, and boost efficiency.
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Automation</li>
+              <li style="--clr-tag: red">Data Analysis</li>
+              <li style="--clr-tag: green">Smart Systems</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card dark:text-white">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/92/df/dc/92dfdcb7dfb06eb406e33967ec0bda8c.jpg"
+                  alt="HR AGENT"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content dark:text-white">
+            <h3>HR & Recriutment</h3>
+            <p class="dark:text-white">
+              Find, manage, and retain top talent with ease. Our HR &
+              recruitment services streamline hiring, onboarding, and employee
+              management — tailored for your company’s unique culture
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Talent</li>
+              <li style="--clr-tag: red">Onboarding</li>
+              <li style="--clr-tag: green">Workforce Management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card extra-card card-hidden">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/99/71/d3/9971d3e1c92ac4a52b1e6e93c0788eda.jpg"
+                  alt="Customer Support"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content dark:text-white">
+            <h3>Content Creation and Creative Services </h3>
+            <p>
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div> <div class="card extra-card card-hidden">
+          <div class="card-inner" style="--clr: #fff">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/736x/ce/bf/94/cebf94c663776eb1270c0d065ac072cd.jpg"
+                  alt="Customer Support"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content dark:text-white">
+            <h3>Sales and marketing support</h3>
+            <p>
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div> <div class="card extra-card card-hidden">
+          <div class="card-inner" style="--clr: #fff ">
+            <div class="box">
+              <div class="imgBox">
+                <img
+                  src="https://i.pinimg.com/474x/c8/8b/72/c88b72a8667fa5472e51f3b8f2a6e634.jpg"
+                  alt="SALES"
+                />
+              </div>
+              <div class="icon">
+                <a href="#" class="iconBox">
+                  <span class="material-symbols-outlined">
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="content dark:text-white">
+            <h3> eCommerce Support</h3>
+            <p>
+              Our customer support team ensures smooth communication, quick
+              issue resolution, and dedicated assistance tailored to your
+              business needs
+            </p>
+            <ul class="flag-list">
+              <li style="--clr-tag: black">Live Chat</li>
+              <li style="--clr-tag: red">Help Desk</li>
+              <li style="--clr-tag: green">24/7 Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button id="toggleCards" class="show-more-btn">
+        Show More
+      </button>
+      
+    </section>
+    <section
+    id="BREATHE"
+    class="reveal-text dark:text-white opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
+  >
+    <h1 id="WHY"
+      class="text-center font-bold text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
+    >
+      WHY US
+    </h1>
+    <h2
+      class="text-center font-bold text-red-700 absolute top-24 left-1/2 transform -translate-x-1/2 text-[clamp(1rem,5vw,3rem)]"
+    >
+      WHY US
+    </h2>
+  </section>
+
+    <section class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000   cards-container  relative w-full h-[100vh]  flex items-center justify-center py-40 overflow-hidden">
+      <!-- Centered "Problem" text -->
+      <h2 class="absolute text-4xl font-bold  text-center dark:text-white text-gray-800 z--1">
+   CHALLENGES
+      </h2>
+    
+      <!-- Scattered Cards -->
+      <div class="absolute  reveal-text opacity-0 translate-y-8 transition-all duration-1000  w-full h-full">
+        <!-- Card 1 -->
+        <div class="  transition-all duration-100 cardd absolute top-[10%] left-[5%] rotate-[10deg]">
+          <img src="./Your paragraph text.png" alt="Request 1" class="w-40 rounded-xl shadow-lg">
+        </div>
+        <!-- Card 4 -->
+        <div class=" transition-all duration-100 cardd absolute bottom-[20%] right-[10%] rotate-[12deg]">
+          <img src="./Your paragraph text (3).png" alt="Request 4" class="w-40 rounded-xl shadow-lg">
+        </div>
+    
+        <!-- Card 5 -->
+        <div class=" transition-all duration-100 cardd absolute bottom-[25%] left-[30%] rotate-[-6deg]">
+          <img src="./Your paragraph text (9).png" alt="Request 5" class="w-36 rounded-xl shadow-lg">
+        </div>
+     <!-- Card 5 -->
+     <div class=" transition-all duration-100 cardd absolute top-[9%] left-[27%] rotate-[-6deg]">
+      <img src="./Your paragraph text (9).png" alt="Request 5" class="w-36 rounded-xl shadow-lg">
+    </div>
+        <!-- Card 6 -->
+        <div class="transition-all duration-100  cardd absolute top-[35%] right-[25%] rotate-[7deg]">
+          <img src="./Your paragraph text (11).png" alt="Request 6" class="w-44 rounded-xl shadow-lg">
+        </div>
+      <!-- Card 7 -->
+<div class="absolute transition-all duration-100 cardd top-[5%] right-[30%] rotate-[5deg]">
+  <img src="./Your paragraph text (10).png" alt="Request 7" class="w-40 rounded-xl shadow-lg">
+</div>
+
+        <!-- Card 2 -->
+        <div class="transition-all duration-100  cardd absolute top-[20%] right-[8%] rotate-[-8deg]">
+          <img src="./Your paragraph text (12).png" alt="Request 2" class="w-44 rounded-xl shadow-lg">
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="transition-all duration-100 cardd absolute top-[50%] left-[12%] rotate-[5deg]">
+          <img src="./Your paragraph text (13).png" alt="Request 3" class="w-36 rounded-xl shadow-lg">
+        </div>
+    
+</section>
+<section class="w-full  py-24 px-6 flex items-center justify-center">
+  <div class="max-w-4xl text-center">
+    <h3 class="text-3xl md:text-4xl font-bold dark:text-white text-gray-800 mb-6">
+      IT'S <span class="text-red-600">NOT</span> JUST ABOUT FINDING PEOPLE — IT'S ABOUT SOLVING THE <span class="text-green-500">RIGHT</span> PROBLEMS.
+    </h3>
+    <p class="text-lg dark:text-white text-gray-600 leading-relaxed">
+      The game has changed.<br>
+      Today’s businesses are building teams in a world where talent is global, expectations are higher, and time is never enough.
+      <br><br>
+      It's no longer about filling seats. It's about matching energy, mindset, and mission. 
+      It’s about delivering support at 2am without burning out your core team.
+      <br><br>
+      From cultural misalignment to onboarding chaos, from overworked staff to underutilized talent—these aren’t just HR problems. 
+      They’re business problems. And if you’re not solving them... you’re stalling growth.
+    </p>
+  </div>
+</section>
+<section class="relative mt-20"> <!-- relative positioning here -->
+  <div
+    id="rotating-image"
+    class="absolute -right-52 top-0 h-[330px] w-auto z-0 raisee"
+  >
+    <img
+      src="./istockphoto-596811948-612x612-removebg-preview.png"
+      alt="Decorative"
+      class="h-full w-auto rotate-slow"
+    />
+  </div>
+
+  <!-- Other content of the section here -->
+</section>
+<section class="relative mt-20"> <!-- relative positioning here -->
+  <div
+    id="rotating-image"
+    class="absolute -left-52 top-0 h-[330px] w-auto z-0 raisee"
+  >
+    <img
+      src="./istockphoto-596811948-612x612-removebg-preview.png"
+      alt="Decorative"
+      class="h-full w-auto rotate-slow"
+    />
+  </div>
+
+  <!-- Other content of the section here -->
+</section>
+
+<section class=" dark:text-white py-20 px-4 text-center">
+  <h3 class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000   text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+   THAT'S WHERE <span class="text-black dark:text-red-400">WE</span> COME IN.
+  </h3>
+  <p class=" dark:text-white reveal-text opacity-0 translate-y-8 transition-all duration-1000   text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+    We stack real-world solutions to real-world problems. Smart, scalable, and tailored for the African workforce — proudly built with <span class="text-green-600 font-semibold">Kenyan precision 🇰🇪</span>.
+  </p>
+
+  <!-- STACKED CARDS -->
+  <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000    grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+    <!-- Card 1 -->
+    <div class="reveal-text opacity-0 translate-y-8 transition-all duration-1000     rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <h4 class="text-xl font-semibold  dark:text-green-600 mb-2">24/7 Customer Support</h4>
+      <p class="text-gray-700 dark:text-white">Global agents trained and ready — no need for a full in-house team.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="reveal-text opacity-0 translate-y-8 transition-all duration-1000     rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <h4 class="text-xl font-semibold text-red-600 mb-2">AI Chatbot Integration</h4>
+      <p class="text-gray-700 dark:text-white">Free up your human team with smart, multilingual AI that scales.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000   rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <h4 class="text-xl font-semibold text-green-600 mb-2">Remote Onboarding</h4>
+      <p class="text-gray-700 dark:text-white">We onboard and train so you don’t have to — fast and frictionless.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000     rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <h4 class="text-xl font-semibold text-black dark:text-green-600 mb-2">Local Language Talent</h4>
+      <p class="text-gray-700 dark:text-white">Speak your customer’s language — literally. We’ve got the reach.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000    rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <h4 class="text-xl font-semibold text-red-600 mb-2">Cost-Effective Scaling</h4>
+      <p class="text-gray-700 dark:text-white">Grow smart. We keep the budget low and performance high.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class=" reveal-text opacity-0 translate-y-8 transition-all duration-1000    rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <h4 class="text-xl font-semibold text-green-600 mb-2">Admin & Data Entry</h4>
+      <p class="text-gray-700 dark:text-white">Tedious tasks? We’ve got virtual teams that handle it all, fast.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="dark:text-white py-16 px-6 md:px-20">
+  <div class="max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center md:items-start gap-8">
+    <!-- CEO Photo -->
+    <div class="relative h-36 w-36">
+      <!-- .webm background animation -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute bottom-0.5  w-44 h-44 object-cover rounded-full z-0"
+      >
+        <source src="./Animation - 1744658281064.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    
+      <!-- CEO image on top -->
+      <img
+        src="https://media.licdn.com/dms/image/v2/D5603AQGxEvoqgAksag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695163463678?e=1750291200&v=beta&t=vFYlZBYfKrBXPlU675Bc1L6f0OXvP2_NIAMMHnr3wog"
+        alt="Tracey Scheffler, CEO"
+        class="h-32 w-32 rounded-full object-cover shadow-lg relative z-10"
+      />
+    </div>
+    
+    <!-- Message -->
+    <div class="flex-1">
+      <h2 class="text-2xl font-bold dark:text-white text-gray-800 mb-4">A Message from Our CEO</h2>
+      <p class="dark:text-white text-gray-600 mb-6">
+        At <strong>New Frontier BPO</strong>, we’re on a mission to showcase Kenya’s incredible talent
+        and deliver unparalleled BPO solutions to clients around the globe. Our dedication to
+        excellence, integrity, and innovation drives every interaction—both with our partners
+        overseas and the communities we uplift here at home.
+      </p>
+      <p class="dark:text-white text-gray-600 italic">
+        “Thank you for trusting us to be your outsourcing partner. Together, we’ll redefine what
+        it means to work with Kenya. <strong class="text-green-800">Karibu sana</strong> — as we say here in Kenya — you are most welcome to be part of this journey.”
+      </p>
+      <p class="mt-4 font-semibold dark:text-red-700 text-red-800">Tracy Scheffler</p>
+      <p class="dark:text-white text-gray-500 text-sm">CEO &amp; Co‑Founder</p>
+    </div>
+    
+  </div>
+</section>
+
+
+<section
+id="BREATHE"
+class="reveal-text opacity-0 translate-y-8 transition-all duration-1000 relative h-60 pb-20"
+>
+<h1
+  class="text-center font-bold dark:text-white text- absolute text-gray-200 top-8 left-1/2 transform -translate-x-1/2 text-[clamp(3rem,10vw,6rem)]"
+>
+  TESTIMONIALS
+</h1>
+<h2
+  class="text-center font-bold text-red-700 absolute top-24 left-1/2 transform -translate-x-1/2 text-[clamp(1rem,5vw,3rem)]"
+>
+TESTIMONIALS
+</h2>
+</section>
+<section class="mb-20 px-4">
+  <div id="testimonialBox" class="w-full max-w-4xl mx-auto p-12 rounded-2xl  text-center transition-all duration-500 bg-white text-black">
+    <p id="testimonialText"  class=" text-xl italic mb-4">
+      "This platform has truly changed my life. Highly recommend to everyone!"
+    </p>
+    <h3 id="testimonialName" class="text-lg    font-bold">- John Doe</h3>
+
+    <!-- Avatar Circles -->
+    <div class="flex justify-center gap-6 mt-10">
+      <img onclick="showTestimonial(0)" src="https://i.pinimg.com/736x/37/12/8d/37128d8d12dd75afdba449b9fa600c9d.jpg" alt="John" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(1)" src="https://randomuser.me/api/portraits/women/20.jpg" alt="Sarah" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(2)" src="https://randomuser.me/api/portraits/men/30.jpg" alt="Mike" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(3)" src="https://randomuser.me/api/portraits/women/40.jpg" alt="Aisha" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+      <img onclick="showTestimonial(4)" src="https://randomuser.me/api/portraits/men/50.jpg" alt="Carlos" class="w-14 h-14 rounded-full object-cover cursor-pointer hover:scale-110 transition border-4 border-white shadow-md">
+    </div>
+  </div>
+</section>
+
+<section>
+  <section class="py-16 dark:text-white text-black text-center">
+    <div class="text2 space-y-6">
+      <h5 id="autoBlur" class="text-7xl font-bold">Let's work together.</h5>
+      <h5 id="autoBlur" class="text-5xl">Get in touch.</h5>
+  
+      <div class="flex justify-center space-x-8 text-6xl mt-8">
+        <a href="https://instagram.com/obinazo" target="_blank" id="autoBlur" class="hover:text-pink-500 transition">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="mailto:paulonyangoobiero@outlook.com" id="autoBlur" class="hover:text-blue-400 transition">
+          <i class="bx bx-envelope"></i>
+        </a>
+        <a href="#" target="_blank" id="autoBlur" class="hover:text-blue-500 transition">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+        <a href="#" id="autoBlur">
+          <i class='bx bxl-twitter'></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="CONTACT-US">
+  <div class="min-h-screen flex items-center justify-center dark:text-white p-4">
+    <div class="w-full max-w-4xl  rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold mb-6 text-center dark:text-white text-gray-800">Contact Us</h2>
+  
+      <form class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Name -->
+          <div>
+            <label class="block mb-1 font-semibold dark:text-white text-gray-700" for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="John Doe"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
+  
+          <!-- Email -->
+          <div>
+            <label class="block mb-1 font-semibold dark:text-white text-gray-700" for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="john@example.com"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
+  
+          <!-- Phone -->
+          <div>
+            <label class="block mb-1 font-semibold dark:text-white text-gray-700" for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+254..."
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
+  
+          <!-- Subject -->
+          <div>
+            <label class="block mb-1 font-semibold dark:text-white text-gray-700" for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder="General Inquiry"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
+        </div>
+  
+        <!-- Message -->
+        <div>
+            <label class="block mb-1 font-semibold dark:text-white text-gray-700" for="message">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Type your message here..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+          ></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-red-500  dark:text-white text-white font-semibold px-6 py-3 rounded-md hover:bg-red-600 transition"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+</section>
+<footer class=" dark:bg-[--color-bg]  text-black border-t-red-600  py-12 mt-20">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+
+    <!-- Logo & About -->
+    <div>
+      <img src="./nftbpo-high-resolution-logo-transparent (1).png" alt="Company Logo" class="w-32 mb-4">
+      <p class="text-sm  text-black  dark:text-white">
+        Empowering businesses through efficient, scalable, and innovative outsourcing solutions. Your success is our priority.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <div>
+      <h3 class="text-lg font-semibold text-black dark:text-white mb-4">Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class=" text-black dark:text-white hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#" class=" text-black dark:text-white hover:text-blue-400 transition">WhyUS</a></li>
+        <li><a href="#" class="  text-black dark:text-white hover:text-blue-400 transition">AboutUs</a></li>
+        <li><a href="#" class="  text-black dark:text-white hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h3 class="text-lg font-semibold text-black dark:text-white mb-4">Newsletter</h3>
+      <p class="text-sm mb-4 text-black dark:text-white ">Sign up to stay updated on our latest services and offers.</p>
+      <form class="flex flex-row space-x-4 items-center">
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          class="px-4 py-2  text-black rounded bg-gray-800 border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 w-64"
+        />
+        <button 
+          type="submit" 
+          class="bg-red-600 text-black dark:text-white  btn-kitenge-hover  transition px-4 py-2 rounded  text-sm"
+        >
+          Subscribe
+        </button>
+      </form>
+      
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-lg font-semibold dark:text-white mb-4">Contact</h3>
+      <p class="text-sm  text-black  dark:text-white">Email: <a href="mailto:nftbpo@gmail.com" class="text-red-400 hover:underline">nftbpo@gmail.com</a></p>
+      <p class="text-sm text-black dark:text-white ">Phone: +254 712 345 678</p>
+    </div>
+
+    <!-- Socials -->
+    <div>
+      <h3 class="text-lg font-semibold  text-black dark:text-white mb-4">Follow US</h3>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-red-400 transition"><i class='bx bxl-github'></i></a>
+        <a href="#" class="hover:text-green-400 transition"><i class='bx bxl-twitter'></i></a>
+        <a href="#" class="hover:text-white transition"><i class='bx bxl-linkedin'></i></a>
+        <a href="#" class="hover:text-green-400 transition"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class=" mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
+    © 2025 Your Company. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+      const image = document.getElementById("rotating-image");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const rotation = scrollY * 0.2; // tweak 0.2 to adjust rotation speed
+        image.style.transform = `rotate(${rotation}deg)`;
+      });
+
+      const counters = document.querySelectorAll(".counter");
+      const singleCounter = document.getElementById("count");
+      let animated = false;
+
+      function animateValue(element, target, duration = 2000) {
+        let start = 0;
+        const step = target / (duration / 20);
+
+        const update = () => {
+          start += step;
+          if (start < target) {
+            element.innerText = Math.floor(start).toLocaleString();
+            setTimeout(update, 20);
+          } else {
+            element.innerText = target.toLocaleString();
+          }
+        };
+        update();
+      }
+
+      const animateAllCounters = () => {
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-target");
+          animateValue(counter, target);
+        });
+
+        // Animate the single #count element
+        if (singleCounter) {
+          animateValue(singleCounter, 9999); // Change 9999 to your target value
+        }
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !animated) {
+            animated = true;
+            animateAllCounters();
+          }
+        },
+        { threshold: 0.4 }
+      );
+
+      observer.observe(document.querySelector("#statsSection"));
+
+      const revealElements = document.querySelectorAll(".reveal-text");
+
+      const observerr = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("opacity-0", "translate-y-8");
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      revealElements.forEach((el) => observerr.observe(el));
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const counter = document.getElementById("count-up");
+        let count = 0;
+        const target = 150;
+        const speed = 10; // smaller = faster
+
+        const updateCount = () => {
+          if (count < target) {
+            count++;
+            counter.textContent = count;
+            setTimeout(updateCount, speed);
+          } else {
+            counter.textContent = target;
+          }
+        };
+
+        updateCount();
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".deconstructed-card");
+
+        cards.forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+
+            const xDeg = (y - 0.5) * 8;
+            const yDeg = (x - 0.5) * -8;
+
+            card.style.transform = `perspective(1200px) rotateX(${xDeg}deg) rotateY(${yDeg}deg)`;
+
+            const layers = card.querySelectorAll(".card-layer");
+
+            layers.forEach((layer, index) => {
+              const depth = 30 * (index + 1);
+              const translateZ = depth;
+              const offsetX = (x - 0.5) * 10 * (index + 1);
+              const offsetY = (y - 0.5) * 10 * (index + 1);
+
+              layer.style.transform = `translate3d(${offsetX}px, ${offsetY}px, ${translateZ}px)`;
+            });
+
+            const waveSvg = card.querySelector(".wave-svg");
+            if (waveSvg) {
+              const moveX = (x - 0.5) * -20;
+              const moveY = (y - 0.5) * -20;
+              waveSvg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+
+              const wavePaths = waveSvg.querySelectorAll(
+                "path:not(:first-child)"
+              );
+              wavePaths.forEach((path, index) => {
+                const factor = 1 + index * 0.5;
+                const waveX = moveX * factor * 0.5;
+                const waveY = moveY * factor * 0.3;
+                path.style.transform = `translate(${waveX}px, ${waveY}px)`;
+              });
+            }
+
+            const bgObjects = card.querySelectorAll(".bg-object");
+            bgObjects.forEach((obj, index) => {
+              const factorX = (index + 1) * 10;
+              const factorY = (index + 1) * 8;
+              const moveX = (x - 0.5) * factorX;
+              const moveY = (y - 0.5) * factorY;
+
+              if (obj.classList.contains("square")) {
+                obj.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
+              } else if (obj.classList.contains("triangle")) {
+                obj.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) scale(1)`;
+              } else {
+                obj.style.transform = `translate(${moveX}px, ${moveY}px)`;
+              }
+            });
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+
+            const layers = card.querySelectorAll(".card-layer");
+            layers.forEach((layer) => {
+              layer.style.transform = "";
+            });
+
+            const waveSvg = card.querySelector(".wave-svg");
+            if (waveSvg) {
+              waveSvg.style.transform = "";
+
+              const wavePaths = waveSvg.querySelectorAll(
+                "path:not(:first-child)"
+              );
+              wavePaths.forEach((path) => {
+                path.style.transform = "";
+              });
+            }
+
+            const bgObjects = card.querySelectorAll(".bg-object");
+            bgObjects.forEach((obj) => {
+              if (obj.classList.contains("square")) {
+                obj.style.transform = "rotate(45deg) translateY(-20px)";
+              } else if (obj.classList.contains("triangle")) {
+                obj.style.transform = "translate(-50%, -50%) scale(0.5)";
+              } else {
+                obj.style.transform = "translateY(20px)";
+              }
+            });
+          });
+        });
+      });
+
+      document.getElementById("toggleCards").addEventListener("click", function () {
+  const hiddenCards = document.querySelectorAll(".extra-card");
+  hiddenCards.forEach((card) => card.classList.toggle("card-hidden"));
+
+  this.textContent =
+    this.textContent === "Show More" ? "Show Less" : "Show More";
+});
+
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', () => {
+    gsap.to(card, { y: -10, scale: 1.05, duration: 0.3 });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, { y: 0, scale: 1, duration: 0.3 });
+  });
+});
+// cards 
+
+const cards = document.querySelectorAll('.cardd');
+
+document.addEventListener('mousemove', (e) => {
+  const { clientX, clientY } = e;
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  cards.forEach((card, index) => {
+    const offsetX = (clientX - centerX) / 50; // was 200
+    const offsetY = (clientY - centerY) / 80; // was 200
+    const rotate = (clientX - centerX) / 80;  // was 200
+
+    card.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotate + index}deg)`;
+  });
+});
+
+      // dropdouwn as i called it  
+     
+  // Show or hide the full accordion section
+  document.getElementById('toggleAccordion').addEventListener('click', () => {
+    const accordion = document.getElementById('accordion');
+    accordion.classList.toggle('hidden');
+  });
+
+  // Toggle individual panels inside the accordion
+  document.querySelectorAll('#accordion button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panelId = btn.dataset.target;
+      const panel = document.getElementById(panelId);
+      const isOpen = !panel.classList.contains('hidden');
+
+      // Optional: close all others
+      document.querySelectorAll('#accordion div[id^="panel"]').forEach(p => {
+        p.classList.add('hidden');
+      });
+
+      // Toggle current
+      panel.classList.toggle('hidden', isOpen);
+
+      // Change "+" to "-" depending on state
+      document.querySelectorAll('#accordion button span:last-child').forEach(icon => {
+        icon.textContent = '+';
+      });
+      if (!isOpen) {
+        btn.querySelector('span:last-child').textContent = '−';
+      }
+    });
+  });
+
+ 
+  const testimonials = [
+    {
+      text: "This platform has truly changed my life. Highly recommend to everyone!",
+      name: "- John Doe",
+      bg: "bg-green-500",
+      textColor: "text-white"
+    },
+    {
+      text: "A smooth and seamless experience from start to finish.",
+      name: "- Sarah Lee",
+      bg: "bg-red-600",
+      textColor: "text-white"
+    },
+    {
+      text: "Super clean interface, great support team, and fast delivery!",
+      name: "- Mike Kim",
+      bg: "bg-white",
+      textColor: "text-black"
+    },
+    {
+      text: "I loved the responsiveness and how intuitive everything felt.",
+      name: "- Aisha Mohammed",
+      bg: "bg-black",
+      textColor: "text-white"
+    },
+    {
+      text: "Hands down one of the best tools I’ve ever used.",
+      name: "- Carlos Rivera",
+      bg: "bg-black",
+      textColor: "text-white"
+    }
+  ];
+
+  function showTestimonial(index) {
+    const box = document.getElementById("testimonialBox");
+    const text = document.getElementById("testimonialText");
+    const name = document.getElementById("testimonialName");
+
+    box.className = "w-full max-w-4xl mx-auto p-12 rounded-2xl shadow-2xl text-center transition-all duration-500";
+
+    // Add dynamic background and text color
+    box.classList.add(testimonials[index].bg, testimonials[index].textColor);
+
+    text.textContent = testimonials[index].text;
+    name.textContent = testimonials[index].name;
+  }
+//  moon sun 
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const toggleIcon = document.getElementById("theme-toggle");
+
+  html.classList.toggle("dark");
+  localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+
+  if (html.classList.contains("dark")) {
+    toggleIcon.classList.remove("bx-sun");
+    toggleIcon.classList.add("bx-moon");
+  } else {
+    toggleIcon.classList.remove("bx-moon");
+    toggleIcon.classList.add("bx-sun");
+  }
+}
+
+// Attach event listener to the <li>
+document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+
+// Load saved theme on page load
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+  document.getElementById("theme-toggle").classList.remove("bx-sun");
+  document.getElementById("theme-toggle").classList.add("bx-moon");
+}
+  const elements = document.querySelectorAll('.autoShow');
+
+const observerrrr = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-autoShow');
+    }
+  });
+});
+
+elements.forEach(el => observerrrr.observe(el));
+
+window.addEventListener("DOMContentLoaded", () => {
+  const blockContainer = document.getElementById("blocks");
+  const blockSize = 50;
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const numCols = Math.ceil(screenWidth / blockSize);
+  const numRows = Math.ceil(screenHeight / blockSize);
+  const numBlocks = numCols * numRows;
+
+  function createBlocks() {
+    for (let i = 0; i < numBlocks; i++) {
+      const block = document.createElement("div");
+      block.classList.add("block");
+      block.dataset.index = i;
+      blockContainer.appendChild(block);
+    }
+  }
+
+  // Function to calculate block index based on mouse position
+  function getBlockIndexFromPosition(x, y) {
+    const col = Math.floor(x / blockSize);
+    const row = Math.floor(y / blockSize);
+    return row * numCols + col;
+  }
+
+  // Function to highlight blocks based on cursor position
+  function highlightBlocksAroundCursor(event) {
+    const cursorX = event.clientX;
+    const cursorY = event.clientY;
+    const index = getBlockIndexFromPosition(cursorX, cursorY);
+
+    // Calculate neighbors of the block where the cursor is
+    const neighbors = [
+      index - 1,
+      index + 1,
+      index - numCols,
+      index + numCols,
+      index - numCols - 1,
+      index - numCols + 1,
+      index + numCols + 1,
+      index + numCols - 1,
+    ].filter(
+      (i) =>
+        i >= 0 &&
+        i < numBlocks &&
+        Math.abs((i % numCols) - (index % numCols)) <= 1
+    );
+
+    // Highlight the block where the cursor is
+    blockContainer.children[index].classList.add("highlight");
+
+    // Highlight random neighbors
+    shuffleArray(neighbors)
+      .slice(0, 1)
+      .forEach((neighborIndex) => {
+        const neighbor = blockContainer.children[neighborIndex];
+        if (neighbor) {
+          neighbor.classList.add("highlight");
+          setTimeout(() => {
+            neighbor.classList.remove("highlight");
+          }, 500);
+        }
+      });
+
+    // Remove the highlight after a brief timeout
+    setTimeout(() => {
+      blockContainer.children[index].classList.remove("highlight");
+    }, 500);
+  }
+
+  // Shuffle array function for randomizing neighbors
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Create blocks and add mousemove event listener to window
+  createBlocks();
+  window.addEventListener("mousemove", highlightBlocksAroundCursor);
+});
+
+
+// chatbot 
+function toggleChatbotModal() {
+  const modal = document.getElementById('chatbotModal');
+  const backdrop = document.getElementById('chatbotBackdrop');
+  const isHidden = modal.classList.contains('hidden');
+
+  if (isHidden) {
+    modal.classList.remove('hidden');
+    backdrop.classList.remove('hidden');
+  } else {
+    modal.classList.add('hidden');
+    backdrop.classList.add('hidden');
+  }
+}
+
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    const modal = document.getElementById('chatbotModal');
+    const backdrop = document.getElementById('chatbotBackdrop');
+    modal.classList.add('hidden');
+    backdrop.classList.add('hidden');
+  }
+});
+function sendMessage(event) {
+  event.preventDefault();
+  const input = document.getElementById("chatInput");
+  const chatArea = document.getElementById("chatArea");
+
+  const userMsg = document.createElement("div");
+  userMsg.textContent = input.value;
+  userMsg.className =
+    "bg-blue-100 p-2 rounded self-end w-fit max-w-[80%] text-sm ml-auto";
+  chatArea.appendChild(userMsg);
+
+  // Scroll to bottom
+  chatArea.scrollTop = chatArea.scrollHeight;
+
+  // Send input.value to chatbot (your friend can hook this to backend/API)
+  // Simulated response:
+  setTimeout(() => {
+    const botMsg = document.createElement("div");
+    botMsg.textContent = "I'm a placeholder chatbot response.";
+    botMsg.className =
+      "bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm";
+    chatArea.appendChild(botMsg);
+    chatArea.scrollTop = chatArea.scrollHeight;
+  }, 1000);
+
+  input.value = "";
+}
+
+    </script>
+  </body>
+</html>

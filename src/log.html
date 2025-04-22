@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2V4QGLK8W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W2V4QGLK8W');
+</script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger Plugin (for scroll animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>USER</title>
+  </head>
+
+  <body  class="dark:bg-[--color-bg-dark]">
+    <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
+        <nav
+          class=" z-10 max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+        >
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img
+            href="index.html#HOME"
+              src="./nftbpo-high-resolution-logo-transparent.png"
+              alt="Logo"
+              class="w-auto h-9 hover:cursor-pointer"
+            />
+            <!-- <span class="text-xl font-bold text-black">BPO</span> -->
+          </div>
+  
+          <!-- Burger Menu for Small Screens -->
+          <div class="lg:hidden flex items-center">
+            <button id="burger-menu-btn" class=" text-black"></button>
+          </div>
+         
+                    
+          <!-- Menu -->
+          <ul
+            id="menu"
+            class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
+          >
+          <!-- Dark Mode Toggle with Boxicons -->
+  <li>
+    
+  
+  
+    <li class="cursor-pointer text-2xl text-yellow-500 dark:text-white transition duration-300" id="darkModeToggle">
+      <i id="theme-toggle" class="bx bx-sun"></i>
+    </li>
+    
+              <a
+                href="index.html#HOME"
+                id="HOME"
+                class="dark:text-white  transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
+              >
+                HOME
+              </a>
+            </li>
+  
+            <li>
+              <a
+                href="index.html#ABOUT"
+                class="border-b-2 border-transparent dark:text-white  hover:border-green-400 hover:text-red-500 transition duration-300"
+                >ABOUT</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#SERVICES"
+                class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+                >SERVICES</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#WHY"
+                class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+                >WHY US</a
+              >
+            </li>
+            <li>
+              <a
+                href="blog.html"
+                class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+                >BLOG</a
+              >
+            </li>
+            <li>
+              <a
+                href="career.html"
+                class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+                >CAREERS</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#CONTACT-US"
+                class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
+                >CONTACT US</a
+              >
+            </li>
+  
+            <!-- Login Button -->
+            <li>
+  
+              <li>
+                <a
+                  
+                  class="ml-4 text-white px-7 py-3 rounded-md btn-kenyan-flag transition duration-300"
+                >
+                
+                </a>
+              </li>
+          
+            </li>
+          </ul>
+        </nav>
+      </header>
+          <!-- SVG Image Positioned on the Left -->
+          <div
+          id="rotating-image"
+          class="absolute -left-72 top-20 h-[630px] w-auto z-0"
+        >
+          <img
+            src="./istockphoto-596811948-612x612-removebg-preview.png"
+            alt="Decorative"
+            class="h-full w-auto rotate-slow"
+          />
+        </div>
+        <div
+        id="rotating-image"
+        class="absolute -right-52 top-96 h-[330px] w-auto z-0"
+      >
+        <img
+          src="./istockphoto-596811948-612x612-removebg-preview.png"
+          alt="Decorative"
+          class="h-full w-auto rotate-slow"
+        />
+      </div>
+      <div class="min-h-screen flex items-center justify-center  px-4 py-10 mt-10">
+        <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-lg w-full max-w-md">
+
+          <h2 class="text-2xl font-bold text-center mb-6" id="form-title">Login</h2>
+      
+          <form id="auth-form" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium dark:text-white text-gray-700">Email</label>
+              <input type="email" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+      
+            <div>
+              <label class="block text-sm font-medium dark:text-white text-gray-700">Password</label>
+              <input type="password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+      
+            <div class="flex items-center dark:text-white justify-between text-sm">
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" class="form-checkbox text-red-500">
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="text-red-500 hover:underline">Forgot password?</a>
+            </div>
+      
+            <button type="submit" class=" btn-kitenge-hover  w-full bg--500 bg-red-700 text-white py-2 rounded-lg transition">
+              Continue
+            </button>
+          </form>
+      
+          <p class="text-sm text-center mt-4">
+            <span id="toggle-text">Don't have an account?</span>
+            <button id="toggle-form" class="text-red-500 hover:underline font-medium">Sign up</button>
+          </p>
+        </div>
+      </div>
+      <script>
+        const formTitle = document.getElementById("form-title");
+        const toggleText = document.getElementById("toggle-text");
+        const toggleForm = document.getElementById("toggle-form");
+      
+        let isLogin = true;
+      
+        toggleForm.addEventListener("click", () => {
+          isLogin = !isLogin;
+          formTitle.textContent = isLogin ? "Login" : "Sign Up";
+          toggleText.textContent = isLogin
+            ? "Don't have an account?"
+            : "Already have an account?";
+          toggleForm.textContent = isLogin ? "Sign up" : "Login";
+        });
+
+        function toggleDarkMode() {
+  const html = document.documentElement;
+  const toggleIcon = document.getElementById("theme-toggle");
+
+  html.classList.toggle("dark");
+  localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+
+  if (html.classList.contains("dark")) {
+    toggleIcon.classList.remove("bx-sun");
+    toggleIcon.classList.add("bx-moon");
+  } else {
+    toggleIcon.classList.remove("bx-moon");
+    toggleIcon.classList.add("bx-sun");
+  }
+}
+
+// Attach event listener to the <li>
+document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+
+// Load saved theme on page load
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+  document.getElementById("theme-toggle").classList.remove("bx-sun");
+  document.getElementById("theme-toggle").classList.add("bx-moon");
+}
+      </script>
+      
+  </body>
+</html>
