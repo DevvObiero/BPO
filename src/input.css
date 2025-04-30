@@ -306,16 +306,13 @@ a {
   display: inline-block;
   text-decoration: none;
 }
-
 .containerr {
-  /* margin-top: 5em;
+  max-width: 1200px;
+  width: 90%;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 2rem; */
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 2rem; /* Adjust spacing */
+  gap: 2rem;
   padding-top: 100px;
 
   .card {
