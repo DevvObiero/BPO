@@ -2127,6 +2127,9 @@ a#autoBlur {
   .custom-heading {
     font-size: 1.35rem;
   }
+  .cardd img {
+    width: 6rem;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

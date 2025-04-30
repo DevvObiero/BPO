@@ -732,4 +732,8 @@ a#autoBlur {
   .custom-heading {
     font-size: 1.35rem; /* 20px */
   }
+
+  .cardd img {
+    width: 6rem; /* Tailwind equivalent of w-24 */
+  }
 }
