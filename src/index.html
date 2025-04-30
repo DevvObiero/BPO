@@ -30,108 +30,57 @@
   <body class="dark:bg-[--color-bg-dark]">
   
     <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
-      <nav
-        class=" z-10 max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
-      >
+      <nav class="z-10 max-w-7xl mx-auto px-4  flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
           <img
-          href="#HOME"
+            href="#HOME"
             src="./nftbpo-high-resolution-logo-transparent.png"
             alt="Logo"
             class="w-auto h-9 hover:cursor-pointer"
           />
-          <!-- <span class="text-xl font-bold text-black">BPO</span> -->
         </div>
-
-        <!-- Burger Menu for Small Screens -->
+    
+        <!-- Burger Menu Button -->
         <div class="lg:hidden flex items-center">
-          <button id="burger-menu-btn" class=" text-black"></button>
+          <button id="burger-menu-btn" class="text-3xl text-black focus:outline-none">
+            <i class="bx bx-menu"></i>
+          </button>
         </div>
-       
-                  
+    
         <!-- Menu -->
         <ul
-          id="menu"
-          class="lg:flex items-center space-x-6 text-sm font-semibold text-black hidden lg:block"
-        >
-        <!-- Dark Mode Toggle with Boxicons -->
-<li>
-  
-
-
-  <li class="cursor-pointer text-2xl text-yellow-500 dark:text-white transition duration-300" id="darkModeToggle">
-    <i id="theme-toggle" class="bx bx-sun"></i>
-  </li>
-  
-            <a
-              href="#HOME"
-              id="HOME"
-              class="dark:text-white  transition duration-300 border-b-2 border-transparent hover:border-green-400 hover:text-red-500"
-            >
-              HOME
+        id="menu"
+        class="nftbpo-mobile-menu hidden lg:flex flex-col lg:flex-row 
+               items-start lg:items-center 
+               space-y-4 lg:space-y-0 lg:space-x-6 
+               text-sm font-semibold text-black 
+               bg-white lg:bg-transparent p-3 lg:pt-5 lg:pb-4 lg:px-0 
+               w-full lg:w-auto z-40
+               fixed top-16 left-0 lg:static lg:top-auto lg:left-auto
+               shadow-md lg:shadow-none"
+      >
+      
+          <li class="cursor-pointer text-2xl text-yellow-500 dark:text-white transition duration-300" id="darkModeToggle">
+            <i id="theme-toggle" class="bx bx-sun"></i>
+          </li>
+    
+          <li><a href="#HOME" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">HOME</a></li>
+          <li><a href="#ABOUT" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">ABOUT</a></li>
+          <li><a href="#SERVICES" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">SERVICES</a></li>
+          <li><a href="#WHY" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">WHY US</a></li>
+          <li><a href="blog.html" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">BLOG</a></li>
+          <li><a href="career.html" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">CAREERS</a></li>
+          <li><a href="#CONTACT-US" class="dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300">CONTACT US</a></li>
+          <li>
+            <a href="./log.html" class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md btn-kitenge-hover hover:text-black transition duration-300">
+              LOGIN
             </a>
-          </li>
-
-          <li>
-            <a
-              href="#ABOUT"
-              class="border-b-2 border-transparent dark:text-white  hover:border-green-400 hover:text-red-500 transition duration-300"
-              >ABOUT</a
-            >
-          </li>
-          <li>
-            <a
-              href="#SERVICES"
-              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
-              >SERVICES</a
-            >
-          </li>
-          <li>
-            <a
-              href="#WHY"
-              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
-              >WHY US</a
-            >
-          </li>
-          <li>
-            <a
-              href="blog.html"
-              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
-              >BLOG</a
-            >
-          </li>
-          <li>
-            <a
-              href="career.html"
-              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
-              >CAREERS</a
-            >
-          </li>
-          <li>
-            <a
-              href="#CONTACT-US"
-              class="border-b-2 border-transparent dark:text-white hover:border-green-400 hover:text-red-500 transition duration-300"
-              >CONTACT US</a
-            >
-          </li>
-
-          <!-- Login Button -->
-          <li>
-
-            <li>
-              <a
-                href="./log.html"
-                class="ml-4 bg-red-500 text-white px-5 py-2 rounded-md btn-kitenge-hover hover:text-black transition duration-300"
-              >
-                LOGIN
-              </a>
-            </li>
-            
           </li>
         </ul>
       </nav>
     </header>
+    
     <!-- Floating Chatbot Modal -->
     <!-- Small Floating Chatbot -->
   <!-- Chatbot Icon -->
@@ -200,8 +149,10 @@
   
       <!-- SVG Image Positioned on the Left -->
       <div
-      id="rotating-image "
-      class="rotating-image absolute -left-72 top-20 h-[630px] w-auto z-0"
+      id="rotating-image"
+      class="rotating-image absolute -left-72 top-20 z-0 
+             h-[400px] sm:h-[500px] md:h-[600px] lg:h-[630px] 
+             w-auto"
     >
       <img
         src="./istockphoto-596811948-612x612-removebg-preview.png"
@@ -1617,6 +1568,14 @@ function sendMessage(event) {
   input.value = "";
 }
 
+
+// burger menu 
+const burgerBtn = document.getElementById("burger-menu-btn");
+  const menu = document.getElementById("menu");
+
+  burgerBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
     </script>
   </body>
 </html>
