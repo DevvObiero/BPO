@@ -730,3 +730,9 @@ a#autoBlur {
   color: white; /* Make sure text shows */
   border: none;
 }
+
+@media (max-width: 640px) {
+  .custom-heading {
+    font-size: 1.35rem; /* 20px */
+  }
+}
