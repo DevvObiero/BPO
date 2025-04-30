@@ -266,6 +266,9 @@ html, body {
   .top-96 {
     top: calc(var(--spacing) * 96);
   }
+  .top-\[-100px\] {
+    top: -100px;
+  }
   .top-\[5\%\] {
     top: 5%;
   }
@@ -481,6 +484,12 @@ html, body {
   }
   .h-\[100vh\] {
     height: 100vh;
+  }
+  .h-\[200px\] {
+    height: 200px;
+  }
+  .h-\[300px\] {
+    height: 300px;
   }
   .h-\[330px\] {
     height: 330px;
@@ -1250,6 +1259,21 @@ html, body {
       outline-style: none;
     }
   }
+  .sm\:top-0 {
+    @media (width >= 40rem) {
+      top: calc(var(--spacing) * 0);
+    }
+  }
+  .sm\:top-\[-80px\] {
+    @media (width >= 40rem) {
+      top: -80px;
+    }
+  }
+  .sm\:top-\[-100px\] {
+    @media (width >= 40rem) {
+      top: -100px;
+    }
+  }
   .sm\:block {
     @media (width >= 40rem) {
       display: block;
@@ -1260,9 +1284,24 @@ html, body {
       height: 300px;
     }
   }
+  .sm\:h-\[330px\] {
+    @media (width >= 40rem) {
+      height: 330px;
+    }
+  }
+  .sm\:h-full {
+    @media (width >= 40rem) {
+      height: 100%;
+    }
+  }
   .sm\:w-3\/4 {
     @media (width >= 40rem) {
       width: calc(3/4 * 100%);
+    }
+  }
+  .sm\:w-auto {
+    @media (width >= 40rem) {
+      width: auto;
     }
   }
   .sm\:grid-cols-2 {
