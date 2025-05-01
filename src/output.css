@@ -246,9 +246,6 @@ html, body {
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
   .top-8 {
     top: calc(var(--spacing) * 8);
   }
@@ -1058,6 +1055,9 @@ html, body {
   .text-yellow-500 {
     color: var(--color-yellow-500);
   }
+  .lowercase {
+    text-transform: lowercase;
+  }
   .italic {
     font-style: italic;
   }
@@ -1350,34 +1350,9 @@ html, body {
       line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
-  .md\:top-3 {
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 3);
-    }
-  }
-  .md\:top-10 {
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 10);
-    }
-  }
-  .md\:top-20 {
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 20);
-    }
-  }
-  .md\:top-40 {
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 40);
-    }
-  }
   .md\:top-50 {
     @media (width >= 48rem) {
       top: calc(var(--spacing) * 50);
-    }
-  }
-  .md\:top-60 {
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 60);
     }
   }
   .md\:right-8 {
@@ -1423,11 +1398,6 @@ html, body {
   .md\:p-1 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 1);
-    }
-  }
-  .md\:p-12 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 12);
     }
   }
   .md\:px-20 {

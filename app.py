@@ -39,8 +39,9 @@ custom_response = {
 }
 @app.route('/chat', methods=['POST'])
 def chat():
-    user_message = request.json['message']
+    user_message = request.json['message'].lower()  # Convert to lowercase
     bot_reply = custom_response.get(user_message)
+    # ... rest of the function remains the samem_response.get(user_message)
 
     if not bot_reply:
         try:

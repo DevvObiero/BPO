@@ -93,7 +93,7 @@
     playsinline
     class="w-20 h-20"
   ></video>
-  <p class="text-[10px] mt-1 dark:text-black text-black">How can I help you today?</p>
+  <p class="text-[10px] mt-1 dark:text-white text-black">How can I help you today?</p>
 </div>
 
     <!-- Chatbot Modal -->
@@ -1512,30 +1512,54 @@ function sendMessage(event) {
   event.preventDefault();
   const input = document.getElementById("chatInput");
   const chatArea = document.getElementById("chatArea");
+  const message = input.value.trim();
 
+  // Check if the message is empty
+  if (message === "") return;
+
+  // Append user message
   const userMsg = document.createElement("div");
-  userMsg.textContent = input.value;
-  userMsg.className =
-    "bg-blue-100 p-2 rounded self-end w-fit max-w-[80%] text-sm ml-auto";
+  userMsg.textContent = message;
+  userMsg.className = "bg-blue-100 p-2 rounded dark:text-black self-end w-fit max-w-[80%] text-sm ml-auto";
   chatArea.appendChild(userMsg);
-
-  // Scroll to bottom
   chatArea.scrollTop = chatArea.scrollHeight;
 
-  // Send input.value to chatbot (your friend can hook this to backend/API)
-  // Simulated response:
-  setTimeout(() => {
+  // Clear the input
+  input.value = "";
+
+  // Send message to the Flask server
+  fetch('http://127.0.0.1:5000/chat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ message: message })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    const botReply = data.reply || 'No reply received from the server.';
+    // Append bot message
     const botMsg = document.createElement("div");
-    botMsg.textContent = "I'm a placeholder chatbot response.";
-    botMsg.className =
-      "bg-red-100 p-2 rounded self-start w-fit max-w-[80%] text-sm";
+    botMsg.textContent = botReply;
+    botMsg.className = "bg-red-100 p-2 rounded dark:text-black self-start w-fit max-w-[80%] text-sm";
     chatArea.appendChild(botMsg);
     chatArea.scrollTop = chatArea.scrollHeight;
-  }, 1000);
-
-  input.value = "";
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Append error message
+    const botMsg = document.createElement("div");
+    botMsg.textContent = 'An error occurred...';
+    botMsg.className = "bg-red-100 p-2 rounded dark:text-black self-start w-fit max-w-[80%] text-sm";
+    chatArea.appendChild(botMsg);
+    chatArea.scrollTop = chatArea.scrollHeight;
+  });
 }
-
 
 // burger menu 
 const burgerBtn = document.getElementById("burger-menu-btn");
