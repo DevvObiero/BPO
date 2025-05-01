@@ -17,7 +17,7 @@ Integrated Google Analytics to collect user interaction data.
 
 Built the chatbot UI widget and login form, and assisted in authentication features.
 
-Junior (AI Integration Lead)
+Don J (AI Integration Lead)
 
 Developed and trained the AI chatbot called Tracy AI (named after the CEO, Tracy Scheffler).
 
