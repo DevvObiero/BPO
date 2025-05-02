@@ -736,4 +736,23 @@ a#autoBlur {
   .cardd img {
     width: 6rem; /* Tailwind equivalent of w-24 */
   }
+
+  #blog {
+    padding: 100px 20px 0 20px !important;
+  }
+
+  #blog .blog-box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  #blog .blog-img {
+    width: 100% !important;
+    margin-right: 0px !important;
+    margin-bottom: 30px !important;
+  }
+
+  #blog .blog-details {
+    width: 100% !important;
+  }
 }

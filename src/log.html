@@ -31,7 +31,8 @@
     <title>USER</title>
   </head>
 
-  <body  class="dark:bg-[--color-bg-dark]">
+  <body class="overflow-x-hidden dark:bg-[--color-bg-dark]">
+
     <header class="bg-transparent backdrop-blur-md fixed w-full z-50">
         <nav
           class=" z-10 max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
@@ -136,61 +137,67 @@
         </nav>
       </header>
           <!-- SVG Image Positioned on the Left -->
-          <div
-          id="rotating-image"
-          class="absolute -left-72 top-20 h-[630px] w-auto z-0"
-        >
-          <img
-            src="./istockphoto-596811948-612x612-removebg-preview.png"
-            alt="Decorative"
-            class="h-full w-auto rotate-slow"
-          />
-        </div>
-        <div
-        id="rotating-image"
-        class="absolute -right-52 top-96 h-[330px] w-auto z-0"
-      >
-        <img
-          src="./istockphoto-596811948-612x612-removebg-preview.png"
-          alt="Decorative"
-          class="h-full w-auto rotate-slow"
-        />
-      </div>
-      <div class="min-h-screen flex items-center justify-center  px-4 py-10 mt-10">
-        <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-lg w-full max-w-md">
+       <!-- Left Rotating Image -->
+       <div
+       id="rotating-image"
+       class="absolute 
+       -left-72 top-20 h-[630px] w-auto z-0
+     "
+       "
+     >
+       <img
+         src="./istockphoto-596811948-612x612-removebg-preview.png"
+         alt="Decorative"
+         class="h-full w-auto rotate-slow"
+       />
+     </div>
+     <div
+     id="rotating-image"
+     class="absolute -right-52 top-96 h-[330px] w-auto z-0
+     "
+   >
+     <img
+       src="./istockphoto-596811948-612x612-removebg-preview.png"
+       alt="Decorative"
+       class="h-full w-auto rotate-slow"
+     />
+   </div>
+<div class="min-h-screen flex items-center justify-center px-4 py-10 sm:py-20 md:py-32">
+  <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-lg w-full max-w-md">
 
-          <h2 class="text-2xl font-bold text-center mb-6" id="form-title">Login</h2>
-      
-          <form id="auth-form" class="space-y-4">
-            <div>
-              <label class="block text-sm font-medium dark:text-white text-gray-700">Email</label>
-              <input type="email" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-      
-            <div>
-              <label class="block text-sm font-medium dark:text-white text-gray-700">Password</label>
-              <input type="password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-      
-            <div class="flex items-center dark:text-white justify-between text-sm">
-              <label class="flex items-center space-x-2">
-                <input type="checkbox" class="form-checkbox text-red-500">
-                <span>Remember me</span>
-              </label>
-              <a href="#" class="text-red-500 hover:underline">Forgot password?</a>
-            </div>
-      
-            <button type="submit" class=" btn-kitenge-hover  w-full bg--500 bg-red-700 text-white py-2 rounded-lg transition">
-              Continue
-            </button>
-          </form>
-      
-          <p class="text-sm text-center mt-4">
-            <span id="toggle-text">Don't have an account?</span>
-            <button id="toggle-form" class="text-red-500 hover:underline font-medium">Sign up</button>
-          </p>
-        </div>
+    <h2 class="text-2xl font-bold text-center mb-6" id="form-title">Login</h2>
+
+    <form id="auth-form" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium dark:text-white text-gray-700">Email</label>
+        <input type="email" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
       </div>
+
+      <div>
+        <label class="block text-sm font-medium dark:text-white text-gray-700">Password</label>
+        <input type="password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
+      </div>
+
+      <div class="flex items-center dark:text-white justify-between text-sm">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" class="form-checkbox text-red-500">
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="text-red-500 hover:underline">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn-kitenge-hover w-full bg--500 bg-red-700 text-white py-2 rounded-lg transition">
+        Continue
+      </button>
+    </form>
+
+    <p class="text-sm text-center mt-4">
+      <span id="toggle-text">Don't have an account?</span>
+      <button id="toggle-form" class="text-red-500 hover:underline font-medium">Sign up</button>
+    </p>
+  </div>
+</div>
+
       <script>
         const formTitle = document.getElementById("form-title");
         const toggleText = document.getElementById("toggle-text");

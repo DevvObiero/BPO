@@ -712,6 +712,9 @@ html, body {
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
@@ -1291,6 +1294,11 @@ html, body {
       padding-inline: calc(var(--spacing) * 6);
     }
   }
+  .sm\:py-20 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 20);
+    }
+  }
   .sm\:text-2xl {
     @media (width >= 40rem) {
       font-size: var(--text-2xl);
@@ -1362,6 +1370,11 @@ html, body {
   .md\:px-20 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:py-32 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 32);
     }
   }
   .md\:text-left {
@@ -1493,11 +1506,6 @@ html, body {
         margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
         margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
       }
-    }
-  }
-  .lg\:bg-transparent {
-    @media (width >= 64rem) {
-      background-color: transparent;
     }
   }
   .lg\:px-0 {
@@ -2145,6 +2153,22 @@ a#autoBlur {
   }
   .cardd img {
     width: 6rem;
+  }
+  #blog {
+    padding: 100px 20px 0 20px !important;
+  }
+  #blog .blog-box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  #blog .blog-img {
+    width: 100% !important;
+    margin-right: 0px !important;
+    margin-bottom: 30px !important;
+  }
+  #blog .blog-details {
+    width: 100% !important;
   }
 }
 @property --tw-translate-x {
