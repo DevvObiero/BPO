@@ -67,4 +67,4 @@ git clone https://github.com/your-username/your-repo-name.git
 Run on local server (e.g. XAMPP or Live Server)
 
 🙌 Acknowledgements
-Special thanks to New Frontier BPO for the opportunity and the hackathon organizer too
+Special thanks to New Frontier BPO for the opportunity and the hackathon organizer too(they ended up being scammers and igored us)
