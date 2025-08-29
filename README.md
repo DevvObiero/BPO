@@ -6,7 +6,7 @@ A Hackathon Project with AI Integration and African-Inspired Design
 📌 Overview
 This website was built by a team of three during a hackathon organized by New Frontier BPO. The goal was to develop a beautiful, responsive, and modern website that integrates data structures, AI, and analytics — all tailored for a real-world business use case.
 
-We combined clean UI/UX, intelligent functionality, and an African cultural theme to bring this vision to life.
+We combined clean  intuitive UI/UX, intelligent functionality, and an African cultural theme to bring this vision to life.
 
 👥 Team Members & Roles
 Paul Obiero (UI/UX Designer, Frontend-Developer)
