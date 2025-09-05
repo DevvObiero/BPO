@@ -1,6 +1,6 @@
 # BPO
 
-🌍 New Frontier BPO Website
+New Frontier BPO Website
 A Hackathon Project with AI Integration and African-Inspired Design
 
 📌 Overview
